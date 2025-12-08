@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scholarship Details - Global Scholars Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: { primary: '#1e40af', secondary: '#eab308', light: '#f3f4f6' }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans text-gray-800 bg-gray-50">
+
+    <nav class="bg-white shadow-sm fixed w-full z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center gap-2">
+                        <i class="fa-solid fa-graduation-cap text-3xl text-primary"></i>
+                        <span class="font-bold text-xl tracking-tight text-gray-900">Global<span class="text-primary">Scholars</span></span>
+                    </a>
+                </div>
+                <div class="flex items-center">
+                    <a href="index.html" class="text-gray-600 hover:text-primary font-medium flex items-center gap-2">
+                        <i class="fa-solid fa-arrow-left"></i> Back to Search
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-4xl mx-auto px-4 pt-32 pb-20">
+        <div class="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 relative">
+            
+            <div class="absolute top-8 right-8">
+                <div class="bg-blue-50 border border-blue-100 px-4 py-2 rounded-2xl flex items-center gap-2 shadow-sm">
+                    <i class="fa-solid fa-chart-line text-blue-600"></i>
+                    <span id="realtimeCounter" class="font-extrabold text-blue-800 text-lg">--</span>
+                    <span class="text-[10px] uppercase font-bold text-blue-400">Views</span>
+                </div>
+            </div>
+
+            <div id="detailContainer">
+                <div class="flex justify-center py-20">
+                    <i class="fa-solid fa-circle-notch fa-spin text-4xl text-primary"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getFirestore, doc, setDoc, onSnapshot, increment } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyAg0cNxnlzYv-1sjntVAYcpg4uz-toILS4",
+            authDomain: "titra-v3.firebaseapp.com",
+            projectId: "titra-v3",
+            storageBucket: "titra-v3.firebasestorage.app",
+            messagingSenderId: "133889427468",
+            appId: "1:133889427468:web:37bd0b9be9551bf75b8629",
+            measurementId: "G-5LXNPJ267C"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        // Global function to call from the UI loop
+        window.startLiveCounter = async (id, baseViewsString) => {
+            const docRef = doc(db, "scholarship_views", "item_" + id);
+            const baseViews = parseInt(baseViewsString.replace(/,/g, '')) || 0;
+
+            try {
+                // Atomic increment (+1) on every page load
+                await setDoc(docRef, { 
+                    liveCount: increment(1) 
+                }, { merge: true });
+
+                // Listen for changes from other users in realtime
+                onSnapshot(docRef, (snap) => {
+                    if (snap.exists()) {
+                        const total = baseViews + (snap.data().liveCount || 0);
+                        document.getElementById('realtimeCounter').innerText = total.toLocaleString();
+                    }
+                });
+            } catch (e) {
+                console.error("Firestore View Error:", e);
+            }
+        };
+    </script>
+
+    <script src="scholarships.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const scholarshipId = parseInt(params.get('id'));
+            const s = scholarships.find(item => item.id === scholarshipId);
+
+            if (s) {
+                // Populate UI
+                const tagsHtml = s.tags.map(tag => 
+                    `<span class="px-3 py-1 bg-gray-50 text-gray-500 text-[10px] font-bold rounded-full border border-gray-100 uppercase">${tag}</span>`
+                ).join(' ');
+
+                document.getElementById('detailContainer').innerHTML = `
+                    <div class="mb-6 flex flex-wrap gap-2">${tagsHtml}</div>
+                    <h1 class="text-3xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-4">${s.title}</h1>
+                    
+                    <div class="flex items-center gap-6 text-sm text-gray-400 mb-8 border-b pb-8">
+                        <span><i class="fa-regular fa-calendar-alt mr-2"></i>Posted: ${s.date}</span>
+                        <span><i class="fa-solid fa-earth-americas mr-2"></i>${s.location}</span>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+                        <div class="p-6 bg-green-50 rounded-2xl border border-green-100">
+                            <p class="text-xs text-green-600 font-bold uppercase tracking-wider mb-1">Coverage</p>
+                            <p class="text-2xl font-black text-green-800">${s.amount}</p>
+                        </div>
+                        <div class="p-6 bg-red-50 rounded-2xl border border-red-100">
+                            <p class="text-xs text-red-600 font-bold uppercase tracking-wider mb-1">Deadline</p>
+                            <p class="text-2xl font-black text-red-800">${s.deadline}</p>
+                        </div>
+                    </div>
+
+                    <div class="prose max-w-none mb-12">
+                        <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+                            <i class="fa-solid fa-circle-info text-primary"></i> About the Scholarship
+                        </h3>
+                        <p class="text-gray-600 leading-relaxed text-lg">${s.description}</p>
+                    </div>
+
+                    <a href="${s.link}" target="_blank" class="block w-full text-center bg-primary text-white py-5 rounded-2xl font-bold text-xl hover:shadow-2xl transition transform hover:-translate-y-1">
+                        Apply Official Link <i class="fa-solid fa-arrow-up-right-from-square ml-2 text-sm"></i>
+                    </a>
+                `;
+
+                // Start Firestore counter
+                if (window.startLiveCounter) window.startLiveCounter(s.id, s.views);
+            } else {
+                document.getElementById('detailContainer').innerHTML = `<h2 class="text-center py-20 text-gray-400">Scholarship not found.</h2>`;
+            }
+        });
+    </script>
+</body>
+</html>
