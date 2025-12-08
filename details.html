@@ -7,6 +7,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=YOUR_PROPERTY_ID&product=inline-share-buttons&source=platform" async="async"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -74,18 +76,15 @@
         const app = initializeApp(firebaseConfig);
         const db = getFirestore(app);
 
-        // Global function to call from the UI loop
         window.startLiveCounter = async (id, baseViewsString) => {
             const docRef = doc(db, "scholarship_views", "item_" + id);
             const baseViews = parseInt(baseViewsString.replace(/,/g, '')) || 0;
 
             try {
-                // Atomic increment (+1) on every page load
-                await setDoc(docRef, { 
-                    liveCount: increment(1) 
-                }, { merge: true });
+                // Increment view count on every load
+                await setDoc(docRef, { liveCount: increment(1) }, { merge: true });
 
-                // Listen for changes from other users in realtime
+                // Update UI in real-time
                 onSnapshot(docRef, (snap) => {
                     if (snap.exists()) {
                         const total = baseViews + (snap.data().liveCount || 0);
@@ -106,7 +105,6 @@
             const s = scholarships.find(item => item.id === scholarshipId);
 
             if (s) {
-                // Populate UI
                 const tagsHtml = s.tags.map(tag => 
                     `<span class="px-3 py-1 bg-gray-50 text-gray-500 text-[10px] font-bold rounded-full border border-gray-100 uppercase">${tag}</span>`
                 ).join(' ');
@@ -138,6 +136,11 @@
                         <p class="text-gray-600 leading-relaxed text-lg">${s.description}</p>
                     </div>
 
+                    <div class="mb-12 p-6 border-t border-b border-gray-50 text-center">
+                         <p class="text-xs font-bold uppercase text-gray-400 mb-4 tracking-widest">Share this Opportunity</p>
+                         <div class="sharethis-inline-share-buttons"></div>
+                    </div>
+
                     <a href="${s.link}" target="_blank" class="block w-full text-center bg-primary text-white py-5 rounded-2xl font-bold text-xl hover:shadow-2xl transition transform hover:-translate-y-1">
                         Apply Official Link <i class="fa-solid fa-arrow-up-right-from-square ml-2 text-sm"></i>
                     </a>
@@ -145,6 +148,11 @@
 
                 // Start Firestore counter
                 if (window.startLiveCounter) window.startLiveCounter(s.id, s.views);
+
+                // Re-initialize ShareThis if it loaded early
+                if (window.__sharethis__ && typeof window.__sharethis__.initialize === 'function') {
+                    window.__sharethis__.initialize();
+                }
             } else {
                 document.getElementById('detailContainer').innerHTML = `<h2 class="text-center py-20 text-gray-400">Scholarship not found.</h2>`;
             }
