@@ -8,7 +8,7 @@ const scholarships = [
     "level": "Bachelor, Graduate",
     "tags": ["Bachelor", "Master", "PhD", "International Students", "US Citizens"],
     "description": "Scholarships for international students and US citizens, offering the Global Wildcat Award ($4,000-$35,000 per year) and covering a wide range of academic fields. The application is entirely online.",
-    "link": "Official Website (Details to be confirmed)",
+    "link": "https://www.arizona.edu/admissions",
     "views": "12,405",
     "date": "Dec 9, 2025",
     "details": {
@@ -71,18 +71,53 @@ const scholarships = [
         "how_to_apply": "The application process is completed Online. Fill out the application form along with the required documents. Visit the official website for details."
     }
 },
-    {
-        id: 2,
-        title: "Japan Education Pathways Scholarship",
-        amount: "Full Tuition + Stipend",
-        deadline: "Open",
-        location: "Japan 🇯🇵",
-        level: "bachelor",
-        tags: ["Refugee Students", "Accommodation"],
-        description: "Full coverage of tuition, fees, on-campus accommodation, and monthly stipend for refugee students.",
-        link: "https://grabscholarships.com/eps-scholarship-for-refugee-students/",
-        views: "8,932",
-        date: "Nov 19, 2025"
-    },
-    
+   {
+    "id": 2,
+    "title": "International Christian University (ICU) Education Pathways Scholarship (EPS) 2026",
+    "amount": "Fully Funded (Tuition, Fees, Accommodation, Stipend)",
+    "deadline": "October 1, 2025",
+    "location": "Japan 🇯🇵",
+    "level": "Undergraduate",
+    "tags": ["Refugee Students", "Pathways Japan", "Full Scholarship", "ICU", "JLPT N3"],
+    "description": "A fully funded undergraduate scholarship at the International Christian University (ICU) in Japan for displaced students who have relocated through a Pathways Japan program. Covers all expenses including tuition, accommodation, and a monthly stipend.",
+    "link": "Official EPS Website (Opens September 1, 2025)",
+    "views": "8,932",
+    "date": "Dec 9, 2025",
+    "details": {
+        "host_country": "Japan",
+        "host_institution": "International Christian University (ICU)",
+        "target_group": "Refugee students",
+        "study_level": "Undergraduate",
+        "field": "Open to all undergraduate fields of study at ICU",
+        "programme_language": "English and Japanese",
+        "funding_type": "Full undergraduate scholarship",
+        "result_announcement_date": "December 2, 2025",
+        "benefits": [
+            "Full coverage of tuition and fees",
+            "On-campus accommodation",
+            "Monthly stipend to cover living expenses",
+            "Application and enrollment fees are covered",
+            "Access to a supportive academic environment at ICU"
+        ],
+        "eligibility_criteria": [
+            "Must be displaced students who have relocated to Japan through an education pathways program administered by Pathways Japan or are attending a partner language school of Pathways Japan.",
+            "Must be 25 or younger at enrollment (April 1, 2026).",
+            "Be single with no dependents.",
+            "Japanese language proficiency equivalent to JLPT N3 level or higher.",
+            "Open to all nationalities."
+        ],
+        "required_documents": [
+            "Online application form (available from September 1 to October 1, 2025)",
+            "Proof of high school completion (diploma and English translation)",
+            "High school transcript (last three years, with English translation if needed)",
+            "National/standardized examination results",
+            "Two recommendation letters from high school teachers or college/university faculty members",
+            "English proficiency test score (TOEFL 79, IELTS 6.5, Duolingo English Test 110)",
+            "Personal statement in English (500-600 words)",
+            "Short essay on a current issue in English (400-500 words)"
+        ],
+        "how_to_apply": "Visit the official EPS website from September 1, 2025. Complete the online application and submit all required documents by October 1, 2025. No application fee is required."
+    }
+},
 ];
+
