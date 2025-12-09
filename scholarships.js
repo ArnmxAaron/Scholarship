@@ -168,7 +168,7 @@ const scholarships = [
     "level": "Masters, PhD",
     "tags": ["Full Scholarship", "International Students", "Saudi Arabia", "Engineering", "Petroleum", "KFUPM"],
     "description": "A fully funded scholarship offered by King Fahd University of Petroleum and Minerals (KFUPM) for outstanding national and international students pursuing Master's (Thesis-Based) or PhD degrees. The scholarship covers full tuition, a monthly salary, free accommodation, medical care, and an airline ticket.",
-    "link": "Official King Fahd University Graduate Admissions Website",
+    "link": "https://cgis.kfupm.edu.sa/",
     "views": "N/A",
     "date": "Dec 9, 2025",
     "date_posted": "2025-12-09T22:42:09.000Z", // ADDED: Matches current date/time to be detected as NEW
@@ -238,3 +238,4 @@ const scholarships = [
     }
 }
 ];
+
