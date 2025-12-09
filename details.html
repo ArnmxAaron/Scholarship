@@ -44,14 +44,6 @@
     <div class="max-w-4xl mx-auto px-4 pt-32 pb-20">
         <div class="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 relative">
             
-            <div class="absolute top-8 right-8">
-                <div class="bg-blue-50 border border-blue-100 px-4 py-2 rounded-2xl flex items-center gap-2 shadow-sm">
-                    <i class="fa-solid fa-chart-line text-blue-600"></i>
-                    <span id="realtimeCounter" class="font-extrabold text-blue-800 text-lg">--</span>
-                    <span class="text-[10px] uppercase font-bold text-blue-400">Views</span>
-                </div>
-            </div>
-
             <div id="detailContainer">
                 <div class="flex justify-center py-20">
                     <i class="fa-solid fa-circle-notch fa-spin text-4xl text-primary"></i>
@@ -87,7 +79,9 @@
                 onSnapshot(docRef, (snap) => {
                     if (snap.exists()) {
                         const total = baseViews + (snap.data().liveCount || 0);
-                        document.getElementById('realtimeCounter').innerText = total.toLocaleString();
+                        // Ensure the counter is updated for the new structure
+                        const counterEl = document.getElementById('realtimeCounter');
+                        if (counterEl) counterEl.innerText = total.toLocaleString();
                     }
                 });
             } catch (e) {
@@ -109,7 +103,18 @@
                 ).join(' ');
 
                 document.getElementById('detailContainer').innerHTML = `
-                    <div class="mb-6 flex flex-wrap gap-2">${tagsHtml}</div>
+                    <div class="mb-6 flex flex-wrap items-center justify-between gap-4 border-b pb-4">
+                        
+                        <div class="flex flex-wrap gap-2">
+                            ${tagsHtml}
+                        </div>
+
+                        <div class="bg-blue-50 border border-blue-100 px-4 py-2 rounded-2xl flex items-center gap-2 shadow-sm">
+                            <i class="fa-solid fa-chart-line text-blue-600"></i>
+                            <span id="realtimeCounter" class="font-extrabold text-blue-800 text-lg">--</span>
+                            <span class="text-[10px] uppercase font-bold text-blue-400">Views</span>
+                        </div>
+                    </div>
                     
                     <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900 leading-tight mb-4">${s.title}</h1>
                     
