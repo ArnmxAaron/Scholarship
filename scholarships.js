@@ -287,6 +287,7 @@ const scholarships = [
     "link": "Official King Fahd University Graduate Admissions Website",
     "views": "N/A",
     "date": "Dec 9, 2025",
+    "date_posted": "2025-12-09T22:42:09.000Z", // ADDED: Matches current date/time to be detected as NEW
     "details": {
         "university": "King Fahd University of Petroleum and Minerals (KFUPM)",
         "study_location": "Kingdom of Saudi Arabia",
@@ -354,6 +355,7 @@ const scholarships = [
 },
     
 ];
+
 
 
 
