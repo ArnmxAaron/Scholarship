@@ -80,7 +80,7 @@ const scholarships = [
     "level": "Undergraduate",
     "tags": ["Refugee Students", "Pathways Japan", "Full Scholarship", "ICU", "JLPT N3"],
     "description": "A fully funded undergraduate scholarship at the International Christian University (ICU) in Japan for displaced students who have relocated through a Pathways Japan program. Covers all expenses including tuition, accommodation, and a monthly stipend.",
-    "link": "Official EPS Website (Opens September 1, 2025)",
+    "link": "https://japanicuf.submittable.com/submit",
     "views": "8,932",
     "date": "Dec 9, 2025",
     "details": {
@@ -120,4 +120,5 @@ const scholarships = [
     }
 },
 ];
+
 
