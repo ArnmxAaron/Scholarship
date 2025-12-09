@@ -119,6 +119,64 @@ const scholarships = [
         "how_to_apply": "Visit the official EPS website from September 1, 2025. Complete the online application and submit all required documents by October 1, 2025. No application fee is required."
     }
 },
+
+     {
+    "id": 3,
+    "title": "Albukhary International University (AIU) Scholarship 2026",
+    "amount": "Fully Funded (Tuition, Accommodation, Meal Allowance)",
+    "deadline": "31 July 2026",
+    "location": "Malaysia 🇲🇾",
+    "level": "Undergraduate, Postgraduate",
+    "tags": ["Full Scholarship", "International Students", "Malaysian Students", "Low Household Income", "AIU"],
+    "description": "A prestigious, fully funded scholarship for academically outstanding students from around the world to pursue undergraduate studies at Albukhary International University in Alor Setar, Kedah, Malaysia. It covers tuition fees, on-campus accommodation, and a monthly meal allowance.",
+    "link": "https://aiu.edu.my/admissions-and-applications/",
+    "views": "N/A",
+    "date": "Dec 9, 2025",
+    "details": {
+        "university": "Albukhary International University (AIU)",
+        "study_location": "Alor Setar, Kedah, Malaysia",
+        "scholarship_coverage": "Full tuition fees, on-campus accommodation, meal allowance",
+        "exclusions": [
+            "Flight tickets",
+            "Visa processing (EMGS procedures)"
+        ],
+        "eligible_nationalities": "Local (Malaysian) and International students",
+        "application_method": "Online application",
+        "eligibility_criteria": [
+            "Must apply for admission to an undergraduate degree programme at AIU.",
+            "Age between 18 – 22 years old (Note: Specific age limits may vary by gender/program; generally 18-22).",
+            "Must be single with no dependents.",
+            "Must meet low household income criteria (e.g., below USD 300 per month for international applicants or specific MYR limits for Malaysian applicants).",
+            "Must not have family members who have been sponsored by Albukhary Foundation.",
+            "Must fulfill academic entry requirements of the chosen program."
+        ],
+        "available_academic_programmes": [
+            "School of Business & Social Sciences (SBSS)",
+            "School of Education & Human Sciences",
+            "School of Computing and Informatics"
+        ],
+        "selection_process_breakdown": {
+            "Socioeconomic background": "40%",
+            "Communication skills": "20%",
+            "Personality traits": "20%",
+            "Attitude and motivation": "20%"
+        },
+        "required_documents": [
+            "Academic certificates and transcripts",
+            "Testimonials (if available)",
+            "Copy of passport",
+            "Sponsorship letter (only if funded by another organisation)",
+            "Parent's identification card or death certificate",
+            "Parent's income slip or Proof of Income Declaration Form",
+            "Utility bill (electricity or water bill)",
+            "Verification letter from a referee",
+            "Three photographs of the family home (outside view, living room, kitchen)",
+            "Personal statement (Why AIU, Impact, Strong candidate - each at least 150 words)"
+        ],
+        "how_to_apply": "Submit an online application through the official Albukhary International University scholarship portal. Shortlisted candidates will be invited for an interview session."
+    }
+},
 ];
+
 
 
