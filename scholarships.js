@@ -176,7 +176,76 @@ const scholarships = [
         "how_to_apply": "Submit an online application through the official Albukhary International University scholarship portal. Shortlisted candidates will be invited for an interview session."
     }
 },
+    {
+    "id": 4,
+    "title": "Boston University (BU) Merit Scholarships 2026",
+    "amount": "Varies: Full Tuition (Trustee) to $25,000/year (Presidential)",
+    "deadline": "December 1, 2025 (Priority/Main Awards)",
+    "location": "USA 🇺🇸",
+    "level": "Undergraduate",
+    "tags": ["Merit-based", "Full Tuition", "International Students", "Trustee", "Presidential", "FIRST Robotics"],
+    "description": "Prestigious merit-based scholarships for exceptional first-year undergraduate students, including the highly selective Trustee Scholarship (full tuition) and the Presidential Scholarship ($25,000 annual award). Open to US citizens and international students.",
+    "link": "https://www.commonapp.org/",
+    "views": "N/A",
+    "date": "Dec 9, 2025",
+    "details": {
+        "university": "Boston University (BU)",
+        "scholarship_type": "Merit-based tuition awards",
+        "study_level": "Undergraduate",
+        "eligible_applicants": "All nationalities (Eligibility varies by specific award)",
+        "main_deadlines": [
+            {
+                "scholarship": "Trustee Scholarship",
+                "deadline_date": "December 1"
+            },
+            {
+                "scholarship": "Presidential Scholarship",
+                "deadline_date": "December 1"
+            },
+            {
+                "scholarship": "National Merit Scholarship (First-Choice Deadline)",
+                "deadline_date": "March 1"
+            },
+            {
+                "scholarship": "College of Engineering FIRST Robotics Scholarship",
+                "deadline_date": "February 1"
+            }
+        ],
+        "general_eligibility": [
+            "Rank within the top 5% of their high school graduating class",
+            "Demonstrate significant extracurricular involvement and leadership",
+            "Showcase outstanding achievements in school or their communities"
+        ],
+        "key_scholarship_awards": [
+            {
+                "name": "Trustee Scholarship",
+                "value": "Full tuition and mandatory fees (renewable for four years)",
+                "eligibility": "All students (US citizens, permanent residents, and international students)",
+                "requirements": "One additional essay via the Common Application. No FAFSA/CSS Profile required.",
+                "number_of_awards": "Approximately 20"
+            },
+            {
+                "name": "Presidential Scholarship",
+                "value": "$25,000 annual tuition award (renewable for four years)",
+                "eligibility": "All students (US citizens, permanent residents, and international students)",
+                "requirements": "Automatic consideration by applying for admission by the deadline. No additional essays/forms required."
+            },
+            {
+                "name": "National Merit Scholarship",
+                "value": "Equal to the Presidential Scholarship ($25,000 annual award)",
+                "eligibility": "National Merit Finalists who select BU as their first-choice institution."
+            },
+            {
+                "name": "College of Engineering FIRST Robotics Scholarship",
+                "value": "$25,000 annual award",
+                "eligibility": "Applicants to the College of Engineering who participated in at least one season of a FIRST Robotics team."
+            }
+        ],
+        "application_process": "Apply for a full-time undergraduate degree program at Boston University using either the Common Application or Coalition Application. Submit all required materials by the respective scholarship deadline (December 1 for main awards)."
+    }
+},
 ];
+
 
 
 
