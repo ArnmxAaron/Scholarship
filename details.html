@@ -7,6 +7,9 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=YOUR_PROPERTY_ID&product=inline-share-buttons&source=platform" async="async"></script>
+
     <script>
         tailwind.config = {
             theme: {
@@ -17,7 +20,6 @@
             }
         }
     </script>
-    <!-- ShareThis BEGIN --><div class="sharethis-inline-share-buttons"></div><!-- ShareThis END -->
 </head>
 <body class="font-sans text-gray-800 bg-gray-50">
 
@@ -75,18 +77,13 @@
         const app = initializeApp(firebaseConfig);
         const db = getFirestore(app);
 
-        // Global function to call from the UI loop
         window.startLiveCounter = async (id, baseViewsString) => {
             const docRef = doc(db, "scholarship_views", "item_" + id);
             const baseViews = parseInt(baseViewsString.replace(/,/g, '')) || 0;
 
             try {
-                // Atomic increment (+1) on every page load
-                await setDoc(docRef, { 
-                    liveCount: increment(1) 
-                }, { merge: true });
+                await setDoc(docRef, { liveCount: increment(1) }, { merge: true });
 
-                // Listen for changes from other users in realtime
                 onSnapshot(docRef, (snap) => {
                     if (snap.exists()) {
                         const total = baseViews + (snap.data().liveCount || 0);
@@ -107,14 +104,14 @@
             const s = scholarships.find(item => item.id === scholarshipId);
 
             if (s) {
-                // Populate UI
                 const tagsHtml = s.tags.map(tag => 
                     `<span class="px-3 py-1 bg-gray-50 text-gray-500 text-[10px] font-bold rounded-full border border-gray-100 uppercase">${tag}</span>`
                 ).join(' ');
 
                 document.getElementById('detailContainer').innerHTML = `
                     <div class="mb-6 flex flex-wrap gap-2">${tagsHtml}</div>
-                    <h1 class="text-3xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-4">${s.title}</h1>
+                    
+                    <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900 leading-tight mb-4">${s.title}</h1>
                     
                     <div class="flex items-center gap-6 text-sm text-gray-400 mb-8 border-b pb-8">
                         <span><i class="fa-regular fa-calendar-alt mr-2"></i>Posted: ${s.date}</span>
@@ -124,11 +121,11 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
                         <div class="p-6 bg-green-50 rounded-2xl border border-green-100">
                             <p class="text-xs text-green-600 font-bold uppercase tracking-wider mb-1">Coverage</p>
-                            <p class="text-2xl font-black text-green-800">${s.amount}</p>
+                            <p class="text-xl font-black text-green-800">${s.amount}</p>
                         </div>
                         <div class="p-6 bg-red-50 rounded-2xl border border-red-100">
                             <p class="text-xs text-red-600 font-bold uppercase tracking-wider mb-1">Deadline</p>
-                            <p class="text-2xl font-black text-red-800">${s.deadline}</p>
+                            <p class="text-xl font-black text-red-800">${s.deadline}</p>
                         </div>
                     </div>
 
@@ -139,6 +136,11 @@
                         <p class="text-gray-600 leading-relaxed text-lg">${s.description}</p>
                     </div>
 
+                    <div class="mb-12 p-6 border-t border-b border-gray-50 text-center">
+                         <p class="text-xs font-bold uppercase text-gray-400 mb-4 tracking-widest">Share this Opportunity</p>
+                         <div class="sharethis-inline-share-buttons"></div>
+                    </div>
+
                     <a href="${s.link}" target="_blank" class="block w-full text-center bg-primary text-white py-5 rounded-2xl font-bold text-xl hover:shadow-2xl transition transform hover:-translate-y-1">
                         Apply Official Link <i class="fa-solid fa-arrow-up-right-from-square ml-2 text-sm"></i>
                     </a>
@@ -146,6 +148,11 @@
 
                 // Start Firestore counter
                 if (window.startLiveCounter) window.startLiveCounter(s.id, s.views);
+                
+                // Re-initialize ShareThis after content injection
+                if (window.__sharethis__ && typeof window.__sharethis__.initialize === 'function') {
+                    window.__sharethis__.initialize();
+                }
             } else {
                 document.getElementById('detailContainer').innerHTML = `<h2 class="text-center py-20 text-gray-400">Scholarship not found.</h2>`;
             }
@@ -153,4 +160,3 @@
     </script>
 </body>
 </html>
-
