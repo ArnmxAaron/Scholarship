@@ -69,7 +69,20 @@ const scholarships = [
             }
         ],
         "how_to_apply": "The application process is completed Online. Fill out the application form along with the required documents. Visit the official website for details."
+    }
+},
+    {
+        id: 2,
+        title: "Japan Education Pathways Scholarship",
+        amount: "Full Tuition + Stipend",
+        deadline: "Open",
+        location: "Japan 🇯🇵",
+        level: "bachelor",
+        tags: ["Refugee Students", "Accommodation"],
+        description: "Full coverage of tuition, fees, on-campus accommodation, and monthly stipend for refugee students.",
+        link: "https://grabscholarships.com/eps-scholarship-for-refugee-students/",
+        views: "8,932",
+        date: "Nov 19, 2025"
     },
-
-       
+    
 ];
