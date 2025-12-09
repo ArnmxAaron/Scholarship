@@ -22,12 +22,46 @@
         .custom-scrollbar::-webkit-scrollbar { width: 4px; }
         .custom-scrollbar::-webkit-scrollbar-track { background: #f1f1f1; }
         .custom-scrollbar::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
+
+        /* Animation for the Notification Bell */
+        @keyframes bell-ring {
+            0% { transform: rotate(0); }
+            15% { transform: rotate(15deg); }
+            30% { transform: rotate(-15deg); }
+            45% { transform: rotate(10deg); }
+            60% { transform: rotate(-10deg); }
+            75% { transform: rotate(5deg); }
+            100% { transform: rotate(0); }
+        }
+        .animate-bell {
+            animation: bell-ring 1.5s ease-in-out infinite; /* Keep it subtle */
+        }
     </style>
-        <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=69372b2525b6302da985a6e8&product=sop' async='async'></script>
-<script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=69372b2525b6302da985a6e8&product=sop' async='async'></script>
+    <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=69372b2525b6302da985a6e8&product=sop' async='async'></script>
 </head>
 <body class="font-sans text-gray-800 bg-gray-50">
 
+    <div id="slider-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-[99] transition-opacity duration-300 hidden opacity-0" onclick="closeNotificationSlider()"></div>
+
+    <div id="notification-slider" class="fixed top-0 left-0 w-80 sm:w-96 h-full bg-white shadow-2xl z-[100] transform -translate-x-full transition-transform duration-300 flex flex-col">
+        <div class="p-4 border-b border-gray-100 flex justify-between items-center">
+            <h2 class="text-lg font-bold text-gray-900 flex items-center gap-2">
+                <i class="fa-solid fa-bell text-primary"></i>
+                New Scholarships
+            </h2>
+            <button onclick="closeNotificationSlider()" class="text-gray-400 hover:text-gray-600 transition">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+        </div>
+        
+        <div id="notification-list" class="flex-grow p-4 space-y-3 overflow-y-auto custom-scrollbar">
+            <div class="text-center py-10 text-gray-400 text-sm">
+                <i class="fa-regular fa-bell-slash text-2xl mb-2 block"></i>
+                No new scholarships for now.
+            </div>
+        </div>
+    </div>
+    
     <nav class="bg-white shadow-sm fixed w-full z-50 border-b border-gray-100" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20">
@@ -40,7 +74,16 @@
                         </div>
                     </a>
                 </div>
-            </div>
+                
+                <div class="flex items-center">
+                    <button id="notification-bell-btn" onclick="openNotificationSlider()" class="relative p-3 rounded-full hover:bg-gray-100 transition focus:outline-none">
+                        <i class="fa-solid fa-bell text-xl text-gray-600" id="bell-icon"></i>
+                        <span id="notification-badge" class="absolute top-1.5 right-1.5 w-6 h-6 bg-red-600 text-white text-xs font-black rounded-full flex items-center justify-center ring-2 ring-white transform scale-0 transition-transform duration-300">
+                            0
+                        </span>
+                    </button>
+                </div>
+                </div>
         </div>
     </nav>
 
@@ -49,6 +92,19 @@
             
             <aside class="w-full lg:w-1/4 order-2 lg:order-1 sticky top-24 h-[calc(100vh-120px)] overflow-y-auto custom-scrollbar pr-2">
                 <div class="space-y-6">
+
+                    <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100">
+                        <h3 class="font-bold text-gray-900 mb-4 border-b pb-2 text-xs uppercase tracking-widest flex justify-between items-center">
+                            New Activity
+                            <span id="sidebar-notification-count" class="bg-red-600 text-white text-[10px] px-2 py-0.5 rounded-full font-black hidden">0</span>
+                        </h3>
+                        <div id="sidebar-notification-list" class="space-y-3">
+                            <p class="text-xs text-gray-500 text-center py-2">Check the bell for new updates.</p>
+                        </div>
+                        <button onclick="openNotificationSlider()" class="mt-4 w-full text-center text-primary border border-primary/20 bg-primary/5 hover:bg-primary/10 font-bold py-2 rounded-xl text-sm transition">
+                            View All New Scholarships
+                        </button>
+                    </div>
                     <div class="bg-gradient-to-br from-green-600 to-green-800 p-6 rounded-2xl shadow-lg text-white">
                         <div class="flex items-center gap-3 mb-4">
                             <i class="fa-brands fa-whatsapp text-4xl"></i>
@@ -72,7 +128,6 @@
                     </div>
                 </div>
             </aside>
-
             <main class="w-full lg:w-2/4 order-1 lg:order-2">
                 <div class="text-center mb-8">
                     <h1 class="text-3xl md:text-5xl font-black text-gray-900 mb-4 tracking-tight leading-tight">Find Your <span class="text-primary">Scholarship</span></h1>
@@ -128,8 +183,8 @@
     <footer class="bg-gray-900 text-white py-12 mt-20">
         <div class="max-w-7xl mx-auto px-4 text-center">
             <div class="flex items-center justify-center gap-2 mb-6 opacity-40 grayscale">
-                 <i class="fa-solid fa-graduation-cap text-3xl"></i>
-                 <span class="font-bold text-xl tracking-tighter">GlobalScholars</span>
+                    <i class="fa-solid fa-graduation-cap text-3xl"></i>
+                    <span class="font-bold text-xl tracking-tighter">GlobalScholars</span>
             </div>
             <p class="text-gray-500 text-xs font-bold uppercase tracking-widest">
                 &copy; 2025 Global Scholars Hub. All rights reserved.
@@ -138,6 +193,7 @@
     </footer>
     <script>(function(s){s.dataset.zone='10300040',s.src='https://gizokraijaw.net/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
 <script>(function(s){s.dataset.zone='10299393',s.src='https://groleegni.net/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+    
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
         import { getFirestore, doc, onSnapshot } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
@@ -182,11 +238,56 @@
 
     <script src="scholarships.js"></script>
     <script src="script.js"></script>
+    
+    <script>
+        function openNotificationSlider() {
+            const slider = document.getElementById('notification-slider');
+            const overlay = document.getElementById('slider-overlay');
+            slider.classList.remove('-translate-x-full');
+            slider.classList.add('translate-x-0');
+            overlay.classList.remove('hidden', 'opacity-0');
+            overlay.classList.add('opacity-100');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling background
+        }
+
+        window.closeNotificationSlider = function() {
+            const slider = document.getElementById('notification-slider');
+            const overlay = document.getElementById('slider-overlay');
+            slider.classList.remove('translate-x-0');
+            slider.classList.add('-translate-x-full');
+            overlay.classList.remove('opacity-100');
+            overlay.classList.add('opacity-0');
+            document.body.style.overflow = ''; // Restore scrolling
+            // Hide overlay completely after transition
+            setTimeout(() => {
+                if (overlay.classList.contains('opacity-0')) {
+                    overlay.classList.add('hidden');
+                }
+            }, 300); 
+        }
+        
+        /**
+         * Updates the notification badge count and toggles the bell animation.
+         * This function is expected to be called by script.js after fetching data.
+         * @param {number} count - The number of new notifications.
+         */
+        window.updateNotificationBadge = (count) => {
+            const badge = document.getElementById('notification-badge');
+            const bell = document.getElementById('bell-icon');
+            badge.innerText = count.toString();
+            if (count > 0) {
+                // Show badge and start animation
+                badge.classList.remove('scale-0');
+                badge.classList.add('scale-100');
+                bell.classList.add('animate-bell'); 
+            } else {
+                // Hide badge and stop animation
+                badge.classList.remove('scale-100');
+                badge.classList.add('scale-0');
+                bell.classList.remove('animate-bell');
+            }
+        };
+
+    </script>
 </body>
-
 </html>
-
-
-
-
-
