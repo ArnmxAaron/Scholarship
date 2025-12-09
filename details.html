@@ -51,7 +51,7 @@
     </div>
 <script>(function(s){s.dataset.zone='10299393',s.src='https://groleegni.net/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
 <script>(function(s){s.dataset.zone='10300040',s.src='https://gizokraijaw.net/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
-    <script type="module">
+   <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
         import { getFirestore, doc, setDoc, onSnapshot, increment } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
@@ -101,7 +101,6 @@
 
         /**
          * Sets up the custom sharing buttons and live count listener.
-         * FIX: Uses window.location.href (the friendly URL with slug) for sharing.
          */
         window.setupCustomShare = function (scholarshipTitle, scholarshipId) {
             // Use the current, friendly URL in the address bar
@@ -155,7 +154,6 @@
         };
 
         // Function for copying the link, exposed globally
-        // FIX: Copies window.location.href (the friendly URL with slug)
         window.copyLink = function() {
             const url = window.location.href; 
             
@@ -168,226 +166,259 @@
         };
     </script>
 
-   <script src="scholarships.js"></script>
-<script>
-    /**
-     * Converts a title into a URL-friendly slug.
-     */
-    function createSlug(text) {
-        return text.toLowerCase()
-                    .replace(/[^a-z0-9\s-]/g, '')
-                    .trim()
-                    .replace(/\s+/g, '-')
-                    .replace(/-+/g, '-');
-    }
-    
-    document.addEventListener('DOMContentLoaded', () => {
-        const params = new URLSearchParams(window.location.search);
-        const scholarshipId = parseInt(params.get('id'));
-        const incomingSlug = params.get('slug');
-
-        const s = scholarships.find(item => item.id === scholarshipId);
-
-        if (s) {
-            // --- URL Slug Correction Logic (Fix for Sharing) ---
-            const correctSlug = createSlug(s.title);
-            if (!incomingSlug || incomingSlug !== correctSlug) {
-                const correctedUrl = `${window.location.pathname}?id=${scholarshipId}&slug=${correctSlug}`;
-                window.history.replaceState(null, '', correctedUrl);
-            }
-            // ----------------------------------------------------
-
-            const tagsHtml = s.tags.map(tag => 
-                `<span class="px-3 py-1 bg-gray-50 text-gray-500 text-[10px] font-bold rounded-full border border-gray-100 uppercase">${tag}</span>`
-            ).join(' ');
-
-            
-            // --- New Logic for Extended Details (Provision for Rich Content) ---
-            let extendedDetailsHtml = '';
-
-            if (s.details) {
-                const details = s.details;
-
-                // A. Benefits Section
-                if (details.benefits && details.benefits.length > 0) {
-                    const benefitsList = details.benefits.map(item => `<li><i class="fa-solid fa-check text-green-500 mr-3"></i>${item}</li>`).join('');
-                    extendedDetailsHtml += `
-                        <div class="mb-10">
-                            <h3 class="text-2xl font-bold mb-4 flex items-center gap-2 border-b pb-2">
-                                <i class="fa-solid fa-hand-holding-dollar text-secondary"></i> Scholarship Benefits
-                            </h3>
-                            <ul class="space-y-3 list-none p-0 text-gray-700">
-                                ${benefitsList}
-                            </ul>
-                        </div>
-                    `;
-                }
-
-                // B. Eligibility Section
-                if (details.eligibility_criteria && details.eligibility_criteria.length > 0) {
-                    const eligibilityList = details.eligibility_criteria.map(item => `<li><i class="fa-solid fa-user-check text-primary mr-3"></i>${item}</li>`).join('');
-                    extendedDetailsHtml += `
-                        <div class="mb-10">
-                            <h3 class="text-2xl font-bold mb-4 flex items-center gap-2 border-b pb-2">
-                                <i class="fa-solid fa-clipboard-list text-primary"></i> Eligibility Criteria
-                            </h3>
-                            <ul class="space-y-3 list-none p-0 text-gray-700">
-                                ${eligibilityList}
-                            </ul>
-                        </div>
-                    `;
-                }
-
-                // C. Required Documents Section (New)
-                if (details.required_documents && details.required_documents.length > 0) {
-                    const documentList = details.required_documents.map(item => `<li><i class="fa-solid fa-file-pdf text-red-500 mr-3"></i>${item}</li>`).join('');
-                    extendedDetailsHtml += `
-                        <div class="mb-10">
-                            <h3 class="text-2xl font-bold mb-4 flex items-center gap-2 border-b pb-2">
-                                <i class="fa-solid fa-folder-open text-orange-500"></i> Required Documents
-                            </h3>
-                            <p class="text-sm text-gray-500 mb-4">Ensure all documents are ready for submission, translated if necessary.</p>
-                            <ul class="space-y-3 list-none p-0 text-gray-700 bg-orange-50 p-4 rounded-xl border border-orange-100">
-                                ${documentList}
-                            </ul>
-                        </div>
-                    `;
-                }
-
-
-                // D. Available Courses Section
-                if (details.available_courses && details.available_courses.length > 0) {
-                    const coursePills = details.available_courses.map(course => 
-                        `<span class="inline-block bg-gray-100 text-gray-600 text-sm px-3 py-1 rounded-full">${course}</span>`
-                    ).join(' ');
-                    extendedDetailsHtml += `
-                        <div class="mb-10">
-                            <h3 class="text-2xl font-bold mb-4 flex items-center gap-2 border-b pb-2">
-                                <i class="fa-solid fa-book-open-reader text-red-500"></i> Available Courses
-                            </h3>
-                            <div class="flex flex-wrap gap-2">
-                                ${coursePills}
-                            </div>
-                        </div>
-                    `;
-                }
-
-                // E. Application Deadlines Table
-                if (details.application_deadlines && details.application_deadlines.length > 0) {
-                    const tableRows = details.application_deadlines.map(d => `
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="py-3 px-4 font-medium text-gray-800">${d.term}</td>
-                            <td class="py-3 px-4 text-gray-600 hidden sm:table-cell">${d.term_dates}</td>
-                            <td class="py-3 px-4 font-extrabold text-red-600">${d.deadline_date}</td>
-                        </tr>
-                    `).join('');
-
-                    extendedDetailsHtml += `
-                        <div class="mb-10">
-                            <h3 class="text-2xl font-bold mb-4 flex items-center gap-2 border-b pb-2">
-                                <i class="fa-solid fa-calendar-xmark text-red-600"></i> Key Application Deadlines
-                            </h3>
-                            <div class="overflow-x-auto shadow-md rounded-xl border border-gray-100">
-                                <table class="min-w-full divide-y divide-gray-200">
-                                    <thead class="bg-gray-50">
-                                        <tr>
-                                            <th class="py-3 px-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">Term</th>
-                                            <th class="py-3 px-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider hidden sm:table-cell">Term Dates</th>
-                                            <th class="py-3 px-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">Deadline</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="bg-white divide-y divide-gray-200">
-                                        ${tableRows}
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    `;
-                }
-
-                // F. How to Apply
-                if (details.how_to_apply) {
-                    extendedDetailsHtml += `
-                        <div class="mb-12 border-t pt-8">
-                            <h3 class="text-2xl font-bold mb-4 flex items-center gap-2">
-                                <i class="fa-solid fa-laptop-code text-green-700"></i> How To Apply
-                            </h3>
-                            <p class="text-lg text-gray-700 leading-relaxed bg-green-50 p-4 rounded-xl border border-green-100">${details.how_to_apply}</p>
-                        </div>
-                    `;
-                }
-            }
-            // -----------------------------------------------------------------
-
-
-            document.getElementById('detailContainer').innerHTML = `
-                <div class="mb-8 p-4 border border-gray-100 rounded-xl bg-gray-50 flex flex-col md:flex-row items-center justify-center md:justify-between gap-4">
-                    <div class="flex items-center gap-3 text-sm font-bold text-gray-600">
-                        <i class="fa-solid fa-share-nodes text-primary text-lg"></i>
-                        <span class="text-xs uppercase tracking-widest text-gray-400">Total Shares:</span>
-                        <span id="totalShareCount" class="font-extrabold text-gray-900 text-lg">--</span>
-                    </div>
-                    <div id="customShareButtons" class="flex justify-center gap-2">
-                        </div>
-                </div>
-                <div class="mb-6 flex flex-wrap items-center justify-between gap-4 border-b pb-4">
-                    
-                    <div class="flex flex-wrap gap-2">
-                        ${tagsHtml}
-                    </div>
-
-                    <div class="bg-blue-50 border border-blue-100 px-4 py-2 rounded-2xl flex items-center gap-2 shadow-sm">
-                        <i class="fa-solid fa-chart-line text-blue-600"></i>
-                        <span id="realtimeCounter" class="font-extrabold text-blue-800 text-lg">--</span>
-                        <span class="text-[10px] uppercase font-bold text-blue-400">Views</span>
-                    </div>
-                </div>
-                
-                <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900 leading-tight mb-4">${s.title}</h1>
-                
-                <div class="flex items-center gap-6 text-sm text-gray-400 mb-8 border-b pb-8">
-                    <span><i class="fa-regular fa-calendar-alt mr-2"></i>Posted: ${s.date}</span>
-                    <span><i class="fa-solid fa-earth-americas mr-2"></i>${s.location}</span>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-                    <div class="p-6 bg-green-50 rounded-2xl border border-green-100">
-                        <p class="text-xs text-green-600 font-bold uppercase tracking-wider mb-1">Coverage</p>
-                        <p class="text-xl font-black text-green-800">${s.amount}</p>
-                    </div>
-                    <div class="p-6 bg-red-50 rounded-2xl border border-red-100">
-                        <p class="text-xs text-red-600 font-bold uppercase tracking-wider mb-1">Deadline</p>
-                        <p class="text-xl font-black text-red-800">${s.deadline}</p>
-                    </div>
-                </div>
-
-                <div class="prose max-w-none mb-12">
-                    <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
-                        <i class="fa-solid fa-circle-info text-primary"></i> About the Scholarship
-                    </h3>
-                    <p class="text-gray-600 leading-relaxed text-lg">${s.description}</p>
-                </div>
-
-                ${extendedDetailsHtml} 
-                <a href="${s.link}" target="_blank" class="block w-full text-center bg-primary text-white py-5 rounded-2xl font-bold text-xl hover:shadow-2xl transition transform hover:-translate-y-1">
-                    Apply Official Link <i class="fa-solid fa-arrow-up-right-from-square ml-2 text-sm"></i>
-                </a>
-            `;
-
-            // Start Firestore counter
-            if (window.startLiveCounter) window.startLiveCounter(s.id, s.views);
-
-            // Initialize the custom share buttons and tracking listeners
-            window.setupCustomShare(s.title, s.id);
-            
-        } else {
-            document.getElementById('detailContainer').innerHTML = `<h2 class="text-center py-20 text-gray-400">Scholarship not found.</h2>`;
+    <script src="scholarships.js"></script> <script>
+        /**
+         * Converts a title into a URL-friendly slug.
+         */
+        function createSlug(text) {
+            return text.toLowerCase()
+                        .replace(/[^a-z0-9\s-]/g, '')
+                        .trim()
+                        .replace(/\s+/g, '-')
+                        .replace(/-+/g, '-');
         }
-    });
-</script>
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const scholarshipId = parseInt(params.get('id'));
+            const incomingSlug = params.get('slug');
+
+            // The 'scholarships' array must be defined in scholarships.js 
+            // before this script executes.
+            const s = scholarships.find(item => item.id === scholarshipId);
+
+            if (s) {
+                // --- URL Slug Correction Logic (Fix for Sharing) ---
+                const correctSlug = createSlug(s.title);
+                if (!incomingSlug || incomingSlug !== correctSlug) {
+                    const correctedUrl = `${window.location.pathname}?id=${scholarshipId}&slug=${correctSlug}`;
+                    window.history.replaceState(null, '', correctedUrl);
+                }
+                // ----------------------------------------------------
+
+                const tagsHtml = s.tags.map(tag => 
+                    `<span class="px-3 py-1 bg-gray-50 text-gray-500 text-[10px] font-bold rounded-full border border-gray-100 uppercase">${tag}</span>`
+                ).join(' ');
+
+                
+                // --- New Logic for Extended Details (Provision for Rich Content) ---
+                let extendedDetailsHtml = '';
+
+                if (s.details) {
+                    const details = s.details;
+
+                    // A. Benefits Section
+                    if (details.benefits && details.benefits.length > 0) {
+                        const benefitsList = details.benefits.map(item => `<li><i class="fa-solid fa-check text-green-500 mr-3"></i>${item}</li>`).join('');
+                        extendedDetailsHtml += `
+                            <div class="mb-10">
+                                <h3 class="text-2xl font-bold mb-4 flex items-center gap-2 border-b pb-2">
+                                    <i class="fa-solid fa-hand-holding-dollar text-secondary"></i> Scholarship Benefits
+                                </h3>
+                                <ul class="space-y-3 list-none p-0 text-gray-700">
+                                    ${benefitsList}
+                                </ul>
+                            </div>
+                        `;
+                    }
+
+                    // B. Eligibility Section
+                    if (details.eligibility_criteria && details.eligibility_criteria.length > 0) {
+                        const eligibilityList = details.eligibility_criteria.map(item => `<li><i class="fa-solid fa-user-check text-primary mr-3"></i>${item}</li>`).join('');
+                        extendedDetailsHtml += `
+                            <div class="mb-10">
+                                <h3 class="text-2xl font-bold mb-4 flex items-center gap-2 border-b pb-2">
+                                    <i class="fa-solid fa-clipboard-list text-primary"></i> Eligibility Criteria
+                                </h3>
+                                <ul class="space-y-3 list-none p-0 text-gray-700">
+                                    ${eligibilityList}
+                                </ul>
+                            </div>
+                        `;
+                    }
+
+                    // C. Required Documents Section
+                    if (details.required_documents && details.required_documents.length > 0) {
+                        const documentList = details.required_documents.map(item => `<li><i class="fa-solid fa-file-pdf text-red-500 mr-3"></i>${item}</li>`).join('');
+                        extendedDetailsHtml += `
+                            <div class="mb-10">
+                                <h3 class="text-2xl font-bold mb-4 flex items-center gap-2 border-b pb-2">
+                                    <i class="fa-solid fa-folder-open text-orange-500"></i> Required Documents
+                                </h3>
+                                <p class="text-sm text-gray-500 mb-4">Ensure all documents are ready for submission, translated if necessary.</p>
+                                <ul class="space-y-3 list-none p-0 text-gray-700 bg-orange-50 p-4 rounded-xl border border-orange-100">
+                                    ${documentList}
+                                </ul>
+                            </div>
+                        `;
+                    }
+
+                    // D. Selection Process Breakdown (THE NEW SECTION)
+                    if (details.selection_process_breakdown && Object.keys(details.selection_process_breakdown).length > 0) {
+                        const breakdownItems = Object.entries(details.selection_process_breakdown).map(([criteria, percentString]) => {
+                            const percent = parseInt(percentString.replace('%', ''));
+                            let barColor = 'bg-primary'; 
+                            if (percent >= 40) barColor = 'bg-primary';
+                            else if (percent >= 30) barColor = 'bg-yellow-500';
+                            else if (percent >= 20) barColor = 'bg-green-500';
+                            else barColor = 'bg-gray-500';
+
+                            return `
+                                <div class="mb-4">
+                                    <div class="flex justify-between mb-1">
+                                        <span class="text-base font-medium text-gray-700">${criteria}</span>
+                                        <span class="text-sm font-semibold ${barColor.replace('bg-', 'text-')}">${percentString}</span>
+                                    </div>
+                                    <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                        <div class="${barColor} h-2.5 rounded-full" style="width: ${percent}%;"></div>
+                                    </div>
+                                </div>
+                            `;
+                        }).join('');
+
+                        extendedDetailsHtml += `
+                            <div class="mb-10">
+                                <h3 class="text-2xl font-bold mb-4 flex items-center gap-2 border-b pb-2">
+                                    <i class="fa-solid fa-ranking-star text-primary"></i> Selection Criteria Weight
+                                </h3>
+                                <p class="text-sm text-gray-500 mb-4">The final selection is weighted across the following key areas:</p>
+                                <div class="p-4 bg-blue-50 rounded-xl border border-blue-100">
+                                    ${breakdownItems}
+                                </div>
+                            </div>
+                        `;
+                    }
+                    // END OF NEW SECTION
+
+                    // E. Available Courses Section 
+                    if (details.available_courses && details.available_courses.length > 0) {
+                        const coursePills = details.available_courses.map(course => 
+                            `<span class="inline-block bg-gray-100 text-gray-600 text-sm px-3 py-1 rounded-full">${course}</span>`
+                        ).join(' ');
+                        extendedDetailsHtml += `
+                            <div class="mb-10">
+                                <h3 class="text-2xl font-bold mb-4 flex items-center gap-2 border-b pb-2">
+                                    <i class="fa-solid fa-book-open-reader text-red-500"></i> Available Courses
+                                </h3>
+                                <div class="flex flex-wrap gap-2">
+                                    ${coursePills}
+                                </div>
+                            </div>
+                        `;
+                    }
+
+                    // F. Application Deadlines Table
+                    if (details.application_deadlines && details.application_deadlines.length > 0) {
+                        const tableRows = details.application_deadlines.map(d => `
+                            <tr class="border-b hover:bg-gray-50">
+                                <td class="py-3 px-4 font-medium text-gray-800">${d.term}</td>
+                                <td class="py-3 px-4 text-gray-600 hidden sm:table-cell">${d.term_dates}</td>
+                                <td class="py-3 px-4 font-extrabold text-red-600">${d.deadline_date}</td>
+                            </tr>
+                        `).join('');
+
+                        extendedDetailsHtml += `
+                            <div class="mb-10">
+                                <h3 class="text-2xl font-bold mb-4 flex items-center gap-2 border-b pb-2">
+                                    <i class="fa-solid fa-calendar-xmark text-red-600"></i> Key Application Deadlines
+                                </h3>
+                                <div class="overflow-x-auto shadow-md rounded-xl border border-gray-100">
+                                    <table class="min-w-full divide-y divide-gray-200">
+                                        <thead class="bg-gray-50">
+                                            <tr>
+                                                <th class="py-3 px-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">Term</th>
+                                                <th class="py-3 px-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider hidden sm:table-cell">Term Dates</th>
+                                                <th class="py-3 px-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">Deadline</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="bg-white divide-y divide-gray-200">
+                                            ${tableRows}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        `;
+                    }
+
+                    // G. How to Apply
+                    if (details.how_to_apply) {
+                        extendedDetailsHtml += `
+                            <div class="mb-12 border-t pt-8">
+                                <h3 class="text-2xl font-bold mb-4 flex items-center gap-2">
+                                    <i class="fa-solid fa-laptop-code text-green-700"></i> How To Apply
+                                </h3>
+                                <p class="text-lg text-gray-700 leading-relaxed bg-green-50 p-4 rounded-xl border border-green-100">${details.how_to_apply}</p>
+                            </div>
+                        `;
+                    }
+                }
+                // -----------------------------------------------------------------
+
+
+                document.getElementById('detailContainer').innerHTML = `
+                    <div class="mb-8 p-4 border border-gray-100 rounded-xl bg-gray-50 flex flex-col md:flex-row items-center justify-center md:justify-between gap-4">
+                        <div class="flex items-center gap-3 text-sm font-bold text-gray-600">
+                            <i class="fa-solid fa-share-nodes text-primary text-lg"></i>
+                            <span class="text-xs uppercase tracking-widest text-gray-400">Total Shares:</span>
+                            <span id="totalShareCount" class="font-extrabold text-gray-900 text-lg">--</span>
+                        </div>
+                        <div id="customShareButtons" class="flex justify-center gap-2">
+                            </div>
+                    </div>
+                    <div class="mb-6 flex flex-wrap items-center justify-between gap-4 border-b pb-4">
+                        
+                        <div class="flex flex-wrap gap-2">
+                            ${tagsHtml}
+                        </div>
+
+                        <div class="bg-blue-50 border border-blue-100 px-4 py-2 rounded-2xl flex items-center gap-2 shadow-sm">
+                            <i class="fa-solid fa-chart-line text-blue-600"></i>
+                            <span id="realtimeCounter" class="font-extrabold text-blue-800 text-lg">--</span>
+                            <span class="text-[10px] uppercase font-bold text-blue-400">Views</span>
+                        </div>
+                    </div>
+                    
+                    <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900 leading-tight mb-4">${s.title}</h1>
+                    
+                    <div class="flex items-center gap-6 text-sm text-gray-400 mb-8 border-b pb-8">
+                        <span><i class="fa-regular fa-calendar-alt mr-2"></i>Posted: ${s.date}</span>
+                        <span><i class="fa-solid fa-earth-americas mr-2"></i>${s.location}</span>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+                        <div class="p-6 bg-green-50 rounded-2xl border border-green-100">
+                            <p class="text-xs text-green-600 font-bold uppercase tracking-wider mb-1">Coverage</p>
+                            <p class="text-xl font-black text-green-800">${s.amount}</p>
+                        </div>
+                        <div class="p-6 bg-red-50 rounded-2xl border border-red-100">
+                            <p class="text-xs text-red-600 font-bold uppercase tracking-wider mb-1">Deadline</p>
+                            <p class="text-xl font-black text-red-800">${s.deadline}</p>
+                        </div>
+                    </div>
+
+                    <div class="prose max-w-none mb-12">
+                        <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+                            <i class="fa-solid fa-circle-info text-primary"></i> About the Scholarship
+                        </h3>
+                        <p class="text-gray-600 leading-relaxed text-lg">${s.description}</p>
+                    </div>
+
+                    ${extendedDetailsHtml} 
+                    <a href="${s.link}" target="_blank" class="block w-full text-center bg-primary text-white py-5 rounded-2xl font-bold text-xl hover:shadow-2xl transition transform hover:-translate-y-1">
+                        Apply Official Link <i class="fa-solid fa-arrow-up-right-from-square ml-2 text-sm"></i>
+                    </a>
+                `;
+
+                // Start Firestore counter
+                if (window.startLiveCounter) window.startLiveCounter(s.id, s.views);
+
+                // Initialize the custom share buttons and tracking listeners
+                window.setupCustomShare(s.title, s.id);
+                
+            } else {
+                document.getElementById('detailContainer').innerHTML = `<h2 class="text-center py-20 text-gray-400">Scholarship not found.</h2>`;
+            }
+        });
+    </script>
 </body>
 </html>
-
-
-
-
