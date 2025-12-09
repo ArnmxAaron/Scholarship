@@ -356,6 +356,7 @@ const scholarships = [
             "College of General Studies"
         ]
     }
-}
+},
     
 ];
+
