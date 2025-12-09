@@ -275,7 +275,86 @@ const scholarships = [
         "application_process": "Interested applicants must complete and submit the online application form before the deadline. The selection process may involve virtual interviews for finalists."
     }
 },
+{
+    "id": 6,
+    "title": "King Fahd University (KFUPM) Fully Funded Scholarships 2026",
+    "amount": "Fully Funded (Tuition, Monthly Stipend, Accommodation, Air Ticket)",
+    "deadline": "10 January 2026 (for MS Thesis/PhD)",
+    "location": "Saudi Arabia 🇸🇦",
+    "level": "Masters, PhD",
+    "tags": ["Full Scholarship", "International Students", "Saudi Arabia", "Engineering", "Petroleum", "KFUPM"],
+    "description": "A fully funded scholarship offered by King Fahd University of Petroleum and Minerals (KFUPM) for outstanding national and international students pursuing Master's (Thesis-Based) or PhD degrees. The scholarship covers full tuition, a monthly salary, free accommodation, medical care, and an airline ticket.",
+    "link": "Official King Fahd University Graduate Admissions Website",
+    "views": "N/A",
+    "date": "Dec 9, 2025",
+    "details": {
+        "university": "King Fahd University of Petroleum and Minerals (KFUPM)",
+        "study_location": "Kingdom of Saudi Arabia",
+        "degree_level": "Master’s (Thesis-Based) & PhD",
+        "eligible_nationality": "All nationalities",
+        "scholarship_coverage": [
+            "Full tuition fees",
+            "Monthly salary (stipend)",
+            "Free accommodation for students",
+            "Medical care",
+            "Textbooks",
+            "Subsidised meals",
+            "Project financing",
+            "Airline ticket"
+        ],
+        "application_deadlines": [
+            {
+                "program": "MS (Thesis-Based) and PhD",
+                "status": "Open",
+                "start_date": "23 November 2025",
+                "end_date": "10 January 2026"
+            },
+            {
+                "program": "MS Programs (Project-Based)",
+                "status": "Closed (for this cycle)",
+                "start_date": "04 January 2026",
+                "end_date": "08 February 2026"
+            },
+            {
+                "program": "Executive Master Programs",
+                "status": "Check official website for details"
+            }
+        ],
+        "eligibility_criteria": [
+            "4-year bachelor’s degree for applicants to the master’s program.",
+            "Two-year master’s degree for applicants to the doctoral program.",
+            "Cumulative GPA not less than 3.00 (for scholarship consideration) or 2.5 (for non-scholarship admission)."
+        ],
+        "language_requirements": {
+            "TOEFL": "520 (PBT), 190 (CBT), or 70 (IBT)",
+            "IELTS": "Minimum 6.0",
+            "Duolingo Test": "Minimum 105",
+            "Exemption": "Graduates from English-speaking countries (USA, Canada, UK, Australia, New Zealand) are exempt."
+        },
+        "required_documents": [
+            "Completed online application form",
+            "Copy of ID or passport",
+            "Official, complete academic records for all previous educational levels",
+            "Two letters of recommendation from academic references",
+            "Statement of Purpose (one page)",
+            "Personal photo with white background",
+            "Resume (briefly including education and work experience)",
+            "TOEFL, IELTS, GRE, or GMAT scores (if not exempt)"
+        ],
+        "host_colleges": [
+            "College of Computing and Mathematics",
+            "College of Petroleum Engineering and Geosciences",
+            "Faculty of Engineering and Physics",
+            "College of Chemistry and Materials",
+            "College of Design and Built Environment",
+            "College of Business Administration",
+            "College of General Studies"
+        ]
+    }
+},
+    
 ];
+
 
 
 
