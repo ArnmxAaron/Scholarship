@@ -32,7 +32,7 @@
                 </div>
                 <div class="flex items-center">
                     <a href="index.html" class="text-gray-600 hover:text-primary font-medium flex items-center gap-2">
-                        <i class="fa-solid fa-arrow-left"></i> Back Home
+                        <i class="fa-solid fa-arrow-left"></i> Back to Search
                     </a>
                 </div>
             </div>
@@ -237,7 +237,24 @@
                     `;
                 }
 
-                // C. Available Courses Section
+                // C. Required Documents Section (New)
+                if (details.required_documents && details.required_documents.length > 0) {
+                    const documentList = details.required_documents.map(item => `<li><i class="fa-solid fa-file-pdf text-red-500 mr-3"></i>${item}</li>`).join('');
+                    extendedDetailsHtml += `
+                        <div class="mb-10">
+                            <h3 class="text-2xl font-bold mb-4 flex items-center gap-2 border-b pb-2">
+                                <i class="fa-solid fa-folder-open text-orange-500"></i> Required Documents
+                            </h3>
+                            <p class="text-sm text-gray-500 mb-4">Ensure all documents are ready for submission, translated if necessary.</p>
+                            <ul class="space-y-3 list-none p-0 text-gray-700 bg-orange-50 p-4 rounded-xl border border-orange-100">
+                                ${documentList}
+                            </ul>
+                        </div>
+                    `;
+                }
+
+
+                // D. Available Courses Section
                 if (details.available_courses && details.available_courses.length > 0) {
                     const coursePills = details.available_courses.map(course => 
                         `<span class="inline-block bg-gray-100 text-gray-600 text-sm px-3 py-1 rounded-full">${course}</span>`
@@ -254,7 +271,7 @@
                     `;
                 }
 
-                // D. Application Deadlines Table
+                // E. Application Deadlines Table
                 if (details.application_deadlines && details.application_deadlines.length > 0) {
                     const tableRows = details.application_deadlines.map(d => `
                         <tr class="border-b hover:bg-gray-50">
@@ -287,7 +304,7 @@
                     `;
                 }
 
-                // E. How to Apply
+                // F. How to Apply
                 if (details.how_to_apply) {
                     extendedDetailsHtml += `
                         <div class="mb-12 border-t pt-8">
@@ -369,4 +386,3 @@
 </script>
 </body>
 </html>
-
