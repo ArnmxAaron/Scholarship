@@ -244,7 +244,39 @@ const scholarships = [
         "application_process": "Apply for a full-time undergraduate degree program at Boston University using either the Common Application or Coalition Application. Submit all required materials by the respective scholarship deadline (December 1 for main awards)."
     }
 },
+    {
+    "id": 5,
+    "title": "Obama Foundation Leaders Africa Program 2026",
+    "amount": "Fully Funded (Virtual Leadership Training)",
+    "deadline": "February 9, 2026",
+    "location": "Africa 🌍 (Program is Virtual)",
+    "level": "Professional Development",
+    "tags": ["Leadership", "Africa", "Obama Foundation", "Virtual", "Professional"],
+    "description": "A fully virtual six-month leadership development program sponsored by the Obama Foundation to identify and empower influential leaders across Africa who are committed to solving critical community challenges. Participants receive world-class coaching and strategic development tools.",
+    "link": "Official Obama Foundation Leaders Africa Website",
+    "views": "N/A",
+    "date": "Dec 9, 2025",
+    "details": {
+        "program_sponsors": "Obama Foundation",
+        "program_type": "Leadership Development Program",
+        "training_format": "Fully virtual (online)",
+        "program_duration": "6 months",
+        "eligible_nationality": "Citizens and residents of African countries",
+        "eligible_age": "24 to 45 years old as of August 26, 2025",
+        "basic_qualifications": "A minimum of three years of experience working in their field or sector",
+        "program_overview": "Aims to identify and empower influential leaders across Africa by providing access to world-class leadership coaching, peer learning, values-based training, and strategic development tools.",
+        "eligibility_criteria": [
+            "Applicants must be residents of any African country or territory.",
+            "Candidates must have a minimum of three years of experience working in their field or sector.",
+            "Applicants must be between 24 and 45 years old as of August 26, 2025.",
+            "Strong proficiency in spoken and written English is required.",
+            "Participants must be fully committed to completing the six-month virtual leadership program."
+        ],
+        "application_process": "Interested applicants must complete and submit the online application form before the deadline. The selection process may involve virtual interviews for finalists."
+    }
+},
 ];
+
 
 
 
