@@ -11,6 +11,7 @@ const scholarships = [
     "link": "https://www.arizona.edu/admissions",
     "views": "12,405",
     "date": "Dec 9, 2025",
+    "date_posted": "2025-12-07T10:00:00.000Z", // Set to be viewed/older
     "details": {
         "benefits": [
             "Global Wildcat Award ($4,000-$35,000 per academic year for first-year)",
@@ -71,7 +72,7 @@ const scholarships = [
         "how_to_apply": "The application process is completed Online. Fill out the application form along with the required documents. Visit the official website for details."
     }
 },
-   {
+    {
     "id": 2,
     "title": "International Christian University (ICU) Education Pathways Scholarship (EPS) 2026",
     "amount": "Fully Funded (Tuition, Fees, Accommodation, Stipend)",
@@ -83,6 +84,7 @@ const scholarships = [
     "link": "https://japanicuf.submittable.com/submit",
     "views": "8,932",
     "date": "Dec 9, 2025",
+    "date_posted": "2025-12-07T10:00:00.000Z", // Set to be viewed/older
     "details": {
         "host_country": "Japan",
         "host_institution": "International Christian University (ICU)",
@@ -119,8 +121,7 @@ const scholarships = [
         "how_to_apply": "Visit the official EPS website from September 1, 2025. Complete the online application and submit all required documents by October 1, 2025. No application fee is required."
     }
 },
-
-     {
+    {
     "id": 3,
     "title": "Albukhary International University (AIU) Scholarship 2026",
     "amount": "Fully Funded (Tuition, Accommodation, Meal Allowance)",
@@ -132,6 +133,7 @@ const scholarships = [
     "link": "https://aiu.edu.my/admissions-and-applications/",
     "views": "N/A",
     "date": "Dec 9, 2025",
+    "date_posted": "2025-12-09T22:45:00.000Z", // ADDED: New notification (3 of 4)
     "details": {
         "university": "Albukhary International University (AIU)",
         "study_location": "Alor Setar, Kedah, Malaysia",
@@ -160,7 +162,7 @@ const scholarships = [
             "Communication skills": "20%",
             "Personality traits": "20%",
             "Attitude and motivation": "20%"
-        },
+        ],
         "required_documents": [
             "Academic certificates and transcripts",
             "Testimonials (if available)",
@@ -188,6 +190,7 @@ const scholarships = [
     "link": "https://www.commonapp.org/",
     "views": "N/A",
     "date": "Dec 9, 2025",
+    "date_posted": "2025-12-09T22:45:30.000Z", // ADDED: New notification (4 of 4)
     "details": {
         "university": "Boston University (BU)",
         "scholarship_type": "Merit-based tuition awards",
@@ -256,6 +259,7 @@ const scholarships = [
     "link": "https://obama.org/programs/leaders/africa/#about-the-leaders-africa-program",
     "views": "N/A",
     "date": "Dec 9, 2025",
+    "date_posted": "2025-12-09T22:45:40.000Z", // ADDED: New notification (5 of 4)
     "details": {
         "program_sponsors": "Obama Foundation",
         "program_type": "Leadership Development Program",
@@ -287,7 +291,7 @@ const scholarships = [
     "link": "Official King Fahd University Graduate Admissions Website",
     "views": "N/A",
     "date": "Dec 9, 2025",
-    "date_posted": "2025-12-09T22:42:09.000Z", // ADDED: Matches current date/time to be detected as NEW
+    "date_posted": "2025-12-09T22:46:00.000Z", // ADDED: New notification (6 of 4)
     "details": {
         "university": "King Fahd University of Petroleum and Minerals (KFUPM)",
         "study_location": "Kingdom of Saudi Arabia",
@@ -352,14 +356,6 @@ const scholarships = [
             "College of General Studies"
         ]
     }
-},
+}
     
 ];
-
-
-
-
-
-
-
-
