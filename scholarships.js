@@ -136,7 +136,7 @@ const scholarships = [
         "level": "Professional Development",
         "tags": ["Leadership", "Africa", "Obama Foundation", "Virtual", "Professional"],
         "description": "A fully virtual six-month leadership development program sponsored by the Obama Foundation to identify and empower influential leaders across Africa who are committed to solving critical community challenges. Participants receive world-class coaching and strategic development tools.",
-        "link": "Official Obama Foundation Leaders Africa Website",
+        "link": "https://obama.org/programs/leaders/africa/#about-the-leaders-africa-program",
         "views": "N/A",
         "date": "Dec 9, 2025",
         "date_posted": "2025-12-09T21:45:00.000Z", // ADDED: Recent timestamp
@@ -238,4 +238,5 @@ const scholarships = [
     }
 }
 ];
+
 
