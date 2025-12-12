@@ -1,4 +1,4 @@
-[
+const scholarships = [
     {
         "id": 3,
         "title": "Albukhary International University (AIU) Scholarship 2026",
@@ -411,3 +411,4 @@
         }
     }
 ]
+
