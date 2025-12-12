@@ -29,20 +29,16 @@ const scholarships = [
             "eligible_nationalities": "Local (Malaysian) and International students",
             "application_method": "Online application",
             
-            // --- START OF FIX (The missing data structure) ---
+            // 🔥 **THIS IS THE FIX** 🔥
             "application_deadlines": [
                 {
-                    "term": "Fall Intake", // <-- This value will display as 'Term'
-                    "term_dates": "September 2026 Start", // <-- This value will display as 'Term Dates'
-                    "deadline_date": "31 July 2026" // <-- This value will display as 'Deadline'
-                },
-                {
-                    "term": "Spring Intake",
-                    "term_dates": "January 2027 Start",
-                    "deadline_date": "30 November 2026"
+                    "program": "Undergraduate Intake",
+                    "status": "Open",
+                    "start_date": "N/A",
+                    "end_date": "31 July 2026"
                 }
             ],
-            // --- END OF FIX ---
+            // 🔥 **END OF FIX** 🔥
             
             "eligibility_criteria": [
                 "Must apply for admission to an undergraduate degree programme at AIU.",
