@@ -28,18 +28,6 @@ const scholarships = [
             ],
             "eligible_nationalities": "Local (Malaysian) and International students",
             "application_method": "Online application",
-            
-            // 🔥 **THIS IS THE FIX** 🔥
-            "application_deadlines": [
-                {
-                    "program": "Undergraduate Intake",
-                    "status": "Open",
-                    "start_date": "N/A",
-                    "end_date": "31 July 2026"
-                }
-            ],
-            // 🔥 **END OF FIX** 🔥
-            
             "eligibility_criteria": [
                 "Must apply for admission to an undergraduate degree programme at AIU.",
                 "Age between 18 – 22 years old (Note: Specific age limits may vary by gender/program; generally 18-22).",
@@ -409,7 +397,7 @@ const scholarships = [
             "language_requirements": {
                 "Chinese-taught programs": "HSK4 or above (minimum 210, valid for 2 years)",
                 "English-taught programs": "IELTS 5.5+ or TOEFL 80+ (valid for 2 years) OR English proficiency certificate"
-            ],
+            },
             "required_documents": [
                 "Degree certificates and academic transcripts (notarized)",
                 "Passport-size photo",
@@ -423,3 +411,4 @@ const scholarships = [
         }
     }
 ]
+
