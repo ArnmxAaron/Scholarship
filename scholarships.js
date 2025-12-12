@@ -236,7 +236,79 @@ const scholarships = [
             "College of General Studies"
         ]
     }
+},
+    {
+  "id": 7,
+  "title": "University of Wolverhampton Sanctuary Scholarships 2026",
+  "amount": "Fully Funded (Full Tuition, Maintenance Loan, £1,000 Annual Stipend)",
+  "deadline": "Open Now (Check Official Link for Specific Program Deadlines)",
+  "location": "United Kingdom 🇬🇧",
+  "level": "Undergraduate, Masters, PhD",
+  "tags": [
+    "Fully Funded",
+    "Sanctuary",
+    "Refugees",
+    "Asylum Seekers",
+    "UK",
+    "Undergraduate",
+    "Postgraduate"
+  ],
+  "description": "A fully funded scholarship offered by the University of Wolverhampton for students who are refugees or asylum seekers, providing comprehensive financial support including full tuition, an annual stipend, a maintenance loan, and various bursaries.",
+  "link": "https://www.wlv.ac.uk/international/international-fees--scholarships/",
+  "views": "N/A",
+  "date": "Dec 12, 2025",
+  "date_posted": "2025-12-12T18:13:27.000Z",
+  "details": {
+    "university": "University of Wolverhampton",
+    "study_location": "United Kingdom",
+    "degree_level": "Undergraduate, Master’s, and PhD",
+    "eligible_nationality": "International students, specifically those seeking sanctuary (refugees/asylum seekers)",
+    "scholarship_coverage": [
+      "Full Tuition Fee Coverage for the entire duration of the program",
+      "Annual Stipend: £1,000 per year toward study and living support",
+      "Maintenance Loan: Basic living cost assistance",
+      "Disabled Students Allowance: Financial support for learners with disabilities",
+      "Bursaries Available: Including the Dennis Turner Opportunity Fund and travel bursaries"
+    ],
+    "application_deadlines": [
+      {
+        "program": "Undergraduate, Master's, and PhD",
+        "status": "Open",
+        "start_date": "N/A",
+        "end_date": "Check official website for program-specific application deadlines"
+      }
+    ],
+    "eligibility_criteria": [
+      "Be an international applicant from regions such as the Middle East, Sub-Saharan Africa, North Africa, Pakistan, East Asia, Europe, or the United States (Note: The scholarship specifically targets refugees and asylum seekers/those needing sanctuary support.)",
+      "Apply for any eligible full-time undergraduate or postgraduate program at the University of Wolverhampton",
+      "Hold an international student fee-paying status",
+      "Receive an offer of admission into a full-time undergraduate or graduate degree program",
+      "Meet academic entry requirements and demonstrate the need for sanctuary support"
+    ],
+    "language_requirements": {
+      "Requirement": "English proficiency certificate from previous institution or IELTS score (only if not exempt based on previous degree)"
+    },
+    "required_documents": [
+      "Official academic transcripts",
+      "Statement of Purpose (SOP) or motivational letter",
+      "Interview (if required)",
+      "Bank statement (personal or parent/guardian) - Note: This is an unusual requirement for a 'Sanctuary' scholarship; applicants should check the official page for clarification.",
+      "Academic references",
+      "Passport copy",
+      "Short CV/Resume",
+      "Study plan (for Master’s and PhD only)",
+      "Two recommendation letters",
+      "English proficiency certificate from previous institution",
+      "IELTS score (only if not exempt based on previous degree)"
+    ],
+    "host_faculties": [
+      "Faculty of Business and Social Sciences",
+      "Faculty of Education, Health & Wellbeing",
+      "Faculty of Science & Engineering"
+    ]
+  }
 }
 ];
+
 
 
