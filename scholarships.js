@@ -307,8 +307,87 @@ const scholarships = [
       "Faculty of Science & Engineering"
     ]
   }
+},
+    {
+  "id": 8,
+  "title": "China University of Geosciences (CUG) CSC Scholarship 2026",
+  "amount": "Fully Funded (Tuition, Accommodation, Medical Insurance, Monthly Stipend)",
+  "deadline": "28 February 2026",
+  "location": "China 🇨🇳",
+  "level": "Masters, PhD",
+  "tags": [
+    "Fully Funded",
+    "CSC Scholarship",
+    "China",
+    "Geosciences",
+    "Masters",
+    "PhD",
+    "Engineering"
+  ],
+  "description": "The China University of Geosciences (CUG) CSC Scholarship is a fully funded opportunity through the Chinese Government Scholarship (Chinese University Program) for international students to pursue Master's or PhD degrees. CUG is highly ranked, particularly in geological and environmental sciences.",
+  "link": "https://eniec.cug.edu.cn/Scholarships/Chinese_Government_Scholarship.htm",
+  "views": "N/A",
+  "date": "Dec 12, 2025",
+  "date_posted": "2025-12-12T18:15:30.000Z",
+  "details": {
+    "university": "China University of Geosciences (CUG) Wuhan",
+    "study_location": "China",
+    "degree_level": "Master’s & PhD",
+    "eligible_nationality": "All Nationalities (Non-Chinese citizens)",
+    "scholarship_coverage": [
+      "Full tuition fee waiver",
+      "Free on-campus accommodation",
+      "Comprehensive medical insurance",
+      "Monthly living stipend: Master’s: 3,000 RMB | PhD: 3,500 RMB"
+    ],
+    "study_duration": [
+      "Master’s: 2–3 years",
+      "PhD: 3–4 years"
+    ],
+    "application_deadlines": [
+      {
+        "program": "Master’s & PhD",
+        "status": "Open",
+        "start_date": "N/A",
+        "end_date": "28 February 2026"
+      }
+    ],
+    "eligible_programs": [
+      "Business Administration (Master)",
+      "Computer Science and Technology (Master)",
+      "Geological Resources and Geological Engineering (Master & PhD)",
+      "Groundwater Science & Engineering (Master & PhD)",
+      "Surveying Science and Technology (Master & PhD)",
+      "Materials Science and Engineering (Master & PhD)",
+      "Marine Sciences (Master & PhD)",
+      "Environmental Science and Engineering (Master & PhD)",
+      "Oil and Natural Gas Engineering (Master & PhD)",
+      "Public Administration (Master & PhD)"
+    ],
+    "eligibility_criteria": [
+      "Must be non-Chinese citizens in good health",
+      "Must be a graduate of a Chinese university or an international institution",
+      "Strong academic background and research capability",
+      "Age limits: Master’s: Under 35 | PhD: Under 40"
+    ],
+    "language_requirements": {
+      "Chinese-taught programs": "HSK4 or above (minimum 210, valid for 2 years)",
+      "English-taught programs": "IELTS 5.5+ or TOEFL 80+ (valid for 2 years) OR English proficiency certificate"
+    },
+    "required_documents": [
+      "Degree certificates and academic transcripts (notarized)",
+      "Passport-size photo",
+      "Two recommendation letters",
+      "Personal statement, study plan, or research proposal",
+      "Language proficiency proof (Chinese or English)",
+      "Copy of Foreigner Physical Examination Form",
+      "Police clearance certificate",
+      "Optional: acceptance letter or additional supporting documents"
+    ]
+  }
 }
 ];
+
 
 
 
