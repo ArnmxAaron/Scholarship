@@ -409,6 +409,108 @@ const scholarships = [
                 "Optional: acceptance letter or additional supporting documents"
             ]
         }
+    },
+    {
+    "id": 9,
+    "title": "Monash University Research Scholarships 2026",
+    "amount": "Fully Funded (Full Tuition Fee, Monthly Stipend, Airfare, OSHC)",
+    "deadline": "31 March 2026 (Round 1)",
+    "location": "Australia 🇦🇺",
+    "level": "Master's (by research), PhD",
+    "tags": [
+        "Fully Funded",
+        "Australia",
+        "RTP",
+        "MGS",
+        "Research Scholarship",
+        "Masters",
+        "PhD"
+    ],
+    "description": "The Monash University Research Scholarships are prestigious, fully funded opportunities for domestic and international students to pursue Master's or PhD research degrees at Monash, one of Australia's leading research-intensive universities.",
+    "link": "https://myapp.monash.edu/admissions/s/login/SelfRegister",
+    "views": "N/A",
+    "date": "Dec 15, 2025",
+    "date_posted": "2025-12-15T13:05:10.000Z",
+    "details": {
+        "university": "Monash University",
+        "study_location": "Melbourne, Australia",
+        "degree_level": "Master’s (by research) & PhD",
+        "eligible_nationality": "All Nationalities",
+        "scholarship_coverage": [
+            "Full tuition fee coverage",
+            "Monthly stipend for living expenses (up to AUD 32,000 to AUD 35,600, depending on the scholarship type)",
+            "Airfare and relocation allowance",
+            "Living and accommodation support",
+            "Books and study materials allowance",
+            "Overseas Student Health Cover (OSHC)"
+        ],
+        "scholarship_types": [
+            {
+                "name": "Research Training Program (RTP) Scholarship",
+                "funding": "Australian Government",
+                "allowance": "Up to AUD 32,000 (living allowance)",
+                "note": "Covers tuition for domestic and international students."
+            },
+            {
+                "name": "Monash Graduate Scholarship (MGS)",
+                "funding": "Monash University",
+                "allowance": "Up to AUD 32,000 (living costs)",
+                "note": "Supports Master’s and PhD students."
+            },
+            {
+                "name": "Maxwell King PhD Scholarship",
+                "funding": "Prestigious PhD award",
+                "allowance": "Up to AUD 35,600",
+                "note": "Supports high-achieving students in research."
+            },
+            {
+                "name": "Monash Silver Jubilee PhD Scholarship",
+                "funding": "Rotational award among faculties",
+                "allowance": "Up to AUD 35,000",
+                "note": "Provides funding for PhD studies."
+            },
+            {
+                "name": "Monash International Tuition Scholarship (MITS)",
+                "funding": "Monash University",
+                "allowance": "Covers full tuition fees",
+                "note": "For international students pursuing research degrees."
+            }
+        ],
+        "application_deadlines": [
+            {
+                "program": "Master’s & PhD Research",
+                "status": "Open",
+                "round": "Round 1",
+                "end_date": "31 March 2026"
+            },
+            {
+                "program": "Master’s & PhD Research",
+                "status": "Upcoming",
+                "round": "Round 3",
+                "end_date": "31 August 2026"
+            }
+        ],
+        "eligible_fields_of_study": [
+            "Arts, Design & Architecture",
+            "Business and Economics",
+            "Education",
+            "Engineering",
+            "Information Technology",
+            "Law",
+            "Medicine, Nursing & Health Sciences",
+            "Pharmacy and Pharmaceutical Sciences",
+            "Science",
+            "Humanities and Social Sciences"
+        ],
+        "eligibility_criteria": [
+            "Must be a domestic or international applicant.",
+            "Hold a Bachelor’s degree or equivalent qualification.",
+            "Demonstrate strong academic performance and research potential.",
+            "Meet English language proficiency requirements (IELTS/TOEFL).",
+            "Awarded based on academic merit, research output, and prior experience."
+        ]
     }
+}
 ]
+
 
