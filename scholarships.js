@@ -510,7 +510,73 @@ const scholarships = [
             "Awarded based on academic merit, research output, and prior experience."
         ]
     }
+},
+    {
+    "id": 10,
+    "title": "University of Rochester International Student Summer Research Program 2026",
+    "amount": "Fully Funded (Weekly Stipend, Accommodation, Travel Contribution, Health Insurance)",
+    "deadline": "23 January 2026",
+    "location": "United States 🇺🇸",
+    "level": "Bachelor's, Master's Students",
+    "tags": [
+        "Fully Funded",
+        "USA",
+        "Summer Program",
+        "Research Internship",
+        "Chemistry",
+        "Undergraduate",
+        "Graduate"
+    ],
+    "description": "The International Student Summer Research Program at the University of Rochester is a fully funded opportunity for current international Bachelor's and Master's students in Chemistry or related fields to conduct high-quality research alongside world-class faculty in the USA.",
+    "link": "https://www.sas.rochester.edu/chm/undergraduate/i-scholar.html",
+    "views": "N/A",
+    "date": "Dec 15, 2025",
+    "date_posted": "2025-12-15T13:08:15.000Z",
+    "details": {
+        "university": "University of Rochester",
+        "study_location": "United States",
+        "program_type": "Summer Research Program",
+        "program_duration": "1 June – 31 July 2026",
+        "degree_level": "Bachelor’s & Master’s Students (Undergraduate & Graduate)",
+        "eligible_nationality": "All International Students (Non-US citizens)",
+        "scholarship_coverage": [
+            "Weekly stipend",
+            "Fully arranged accommodation",
+            "USD $1,250 contribution toward travel expenses",
+            "Health insurance coverage",
+            "Tuition fee support and student registration fees",
+            "Assistance with securing a U.S. visa"
+        ],
+        "application_deadlines": [
+            {
+                "program": "Summer Research Program",
+                "status": "Open",
+                "end_date": "23 January 2026"
+            }
+        ],
+        "eligible_fields_of_study": [
+            "Chemistry (Primary focus)",
+            "Physics",
+            "Biology",
+            "Engineering disciplines",
+            "Computer Science"
+        ],
+        "eligibility_criteria": [
+            "Must hold citizenship from any country outside the United States.",
+            "Currently be enrolled in a Bachelor’s or Master’s degree program at a non-U.S. institution.",
+            "Must not be currently pursuing nor have previously pursued a PhD program.",
+            "Must specialize in Chemistry or a closely related field.",
+            "Must intend to pursue a PhD in Chemistry in the United States in the future."
+        ],
+        "required_documents": [
+            "Completed online application form",
+            "Unofficial academic transcripts with English translation",
+            "Updated CV or résumé (PDF format)",
+            "Contact details for two references"
+        ]
+    }
 }
 ]
+
 
 
