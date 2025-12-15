@@ -575,8 +575,82 @@ const scholarships = [
             "Contact details for two references"
         ]
     }
+},
+    {
+    "id": 11,
+    "title": "University of Roehampton / ESRC SeNSS Fully Funded PhD Scholarships 2026",
+    "amount": "Fully Funded (Full Tuition Fee, Annual Maintenance Stipend of ~£20,780 to £22,780)",
+    "deadline": "14 January 2026 (SeNSS Funding Application Deadline)",
+    "location": "United Kingdom 🇬🇧",
+    "level": "PhD Degree Programs (3.5 years) or Master's + PhD (4.5 years)",
+    "tags": [
+        "Fully Funded",
+        "UK",
+        "ESRC",
+        "SeNSS",
+        "PhD",
+        "Social Sciences",
+        "International"
+    ],
+    "description": "These are fully funded PhD studentships offered through the South and East Network for Social Sciences (SeNSS) Doctoral Training Partnership, covering tuition fees and providing a substantial stipend for domestic and international students pursuing research in social sciences at the University of Roehampton.",
+    "link": "https://www.roehampton.ac.uk/",
+    "views": "N/A",
+    "date": "Dec 15, 2025",
+    "date_posted": "2025-12-15T13:15:00.000Z",
+    "details": {
+        "university": "University of Roehampton (as a SeNSS DTP partner)",
+        "study_location": "United Kingdom",
+        "degree_level": "PhD (3.5 years) or Master’s + PhD (4.5 years)",
+        "eligible_nationality": "All Nationalities (UK/International students are eligible for full awards, though international student places are capped at 30% of the awards)",
+        "scholarship_coverage": [
+            "Full tuition fee coverage (at the UK/Home rate, and International students will not be required to pay the difference for SeNSS awards)",
+            "Annual maintenance stipend at UKRI rates (estimated at £20,780 to £22,780 for 2026/27, including London weighting for Roehampton)",
+            "Access to Research Training Support Grant (RTSG) funds for research expenses, fieldwork, and placements",
+            "Mandatory 3-month placement component"
+        ],
+        "application_deadlines": [
+            {
+                "program": "PhD Place Application to Roehampton",
+                "status": "Check University Guidance",
+                "end_date": "Often an earlier internal deadline, contact senss@roehampton.ac.uk for guidance (typically early to mid-December 2025)"
+            },
+            {
+                "program": "SeNSS Studentship Funding Application (via HEIApply)",
+                "status": "Open",
+                "end_date": "14 January 2026 (12:00 PM GMT)"
+            }
+        ],
+        "eligible_fields_of_study": [
+            "Music Psychology and Music Education",
+            "Education and Neurodevelopmental/Sensory Disorders and Disabilities",
+            "Mental Health and Wellbeing in Education",
+            "Early Childhood Education/Intervention",
+            "Digital Literacy and Digital Skills",
+            "Social Justice in Education",
+            "Science Education",
+            "Deaf Education",
+            "Bilingual Education",
+            "Other subjects aligned with SeNSS Thematic Pathways (e.g., Health, Justice, Digital Social Sciences)"
+        ],
+        "eligibility_criteria": [
+            "For **+3 awards (PhD only)**: Must hold a recognized ESRC-approved Master’s degree or have equivalent research training/experience.",
+            "For **1+3 awards (Master’s + PhD)**: A minimum of a 2:1 bachelor’s degree is required.",
+            "Must meet the ESRC's residency and academic eligibility criteria (international students are eligible for full awards).",
+            "Must meet the University of Roehampton's English language proficiency requirements.",
+            "Must have a research proposal that fits within the SeNSS themes and is supported by a Roehampton supervisor."
+        ],
+        "required_documents": [
+            "Curriculum Vitae (CV)",
+            "Personal Statement (Addressing ESRC/SeNSS criteria)",
+            "Study Plan or Research Proposal",
+            "Two Letters of Recommendation (academic references)",
+            "Academic Transcripts/Certificates",
+            "Proof of English language proficiency"
+        ]
+    }
 }
 ]
+
 
 
 
