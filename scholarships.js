@@ -808,8 +808,81 @@ const scholarships = [
             "A 60-second video explaining why you deserve the scholarship (hosted on a cloud/video link)"
         ]
     }
+},
+    {
+    "id": 14,
+    "title": "Manaaki New Zealand Government Scholarship 2026",
+    "amount": "Fully Funded (Tuition, Weekly Stipend, Establishment Allowance, Medical Insurance, Travel)",
+    "deadline": "28 February 2026",
+    "location": "New Zealand 🇳🇿",
+    "level": "Bachelors, Masters, PhD, Postgraduate Diploma/Certificate",
+    "tags": [
+        "Fully Funded",
+        "New Zealand Government",
+        "Manaaki",
+        "International Students",
+        "Pacific",
+        "Asia",
+        "Africa",
+        "Latin America"
+    ],
+    "description": "The Manaaki New Zealand Government Scholarship is a prestigious, fully funded opportunity for international students to pursue tertiary education in New Zealand. It aims to develop leaders who can contribute to the sustainable development of their home countries through high-quality education and professional training.",
+    "link": "https://nzscholarships.my.site.com/Scholar/s/",
+    "views": "N/A",
+    "date": "Dec 16, 2025",
+    "date_posted": "2025-12-16T20:50:00.000Z",
+    "details": {
+        "university": "Participating NZ Universities (UoA, AUT, Massey, Victoria, Lincoln, Canterbury, Otago, Waikato)",
+        "study_location": "New Zealand",
+        "degree_level": "Undergraduate, Masters, PhD, Postgraduate Diploma, Certificate",
+        "eligible_nationality": "Selected countries in the Pacific, Asia, Africa, Caribbean, and Latin America",
+        "scholarship_coverage": [
+            "Full tuition fees",
+            "Weekly living allowance (stipend) of approximately NZ$615 per week",
+            "Establishment allowance of NZ$3,000 (one-off payment for set-up costs)",
+            "Medical and travel insurance",
+            "Return international airfare and travel home during the scholarship (for longer programs)",
+            "Research and thesis costs (for most postgraduate students)",
+            "Help with securing a student visa"
+        ],
+        "application_deadlines": [
+            {
+                "program": "Tertiary Scholarships (Pacific/ASEAN/Global)",
+                "status": "Opening 1 Feb 2026",
+                "start_date": "1 February 2026",
+                "end_date": "28 February 2026"
+            }
+        ],
+        "eligible_fields_of_study": [
+            "Climate Change & Resilience",
+            "Food Security & Agriculture",
+            "Renewable Energy",
+            "Good Governance",
+            "Education",
+            "Health & Wellbeing",
+            "Private Sector Development"
+        ],
+        "eligibility_criteria": [
+            "Must be at least 18 years old by the time the scholarship starts (no upper limit, but those under 40 are preferred).",
+            "Must be a citizen of an eligible country and have lived there for at least 2 years before applying.",
+            "Work experience: One year full-time (30+ hours/week) OR two years part-time.",
+            "Must be committed to returning home for at least 2 years after completion to contribute to home country development.",
+            "Academic transcripts and English scores are NOT required at the initial application stage (only for shortlisted candidates)."
+        ],
+        "language_requirements": {
+            "Note": "Only required for shortlisted candidates",
+            "Postgraduate": "IELTS 6.5 (no band < 6.0) or TOEFL iBT 90 (writing 21+)",
+            "Undergraduate": "IELTS 6.0 (no band < 5.5) or TOEFL iBT 80 (writing 21+)"
+        },
+        "required_documents": [
+            "Completed online eligibility test (on portal)",
+            "Scholarship application form (submitted between Feb 1–28)",
+            "Note: Academic records, transcripts, and proof of English are only requested if you are shortlisted."
+        ]
+    }
 }
 ]
+
 
 
 
