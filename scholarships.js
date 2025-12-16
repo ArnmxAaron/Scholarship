@@ -648,8 +648,87 @@ const scholarships = [
             "Proof of English language proficiency"
         ]
     }
+},
+    {
+    "id": 12,
+    "title": "North China Electric Power University (NCEPU) CSC Scholarship 2026",
+    "amount": "Fully Funded (Tuition, Accommodation, Medical Insurance, Monthly Stipend)",
+    "deadline": "30 March 2026",
+    "location": "China 🇨🇳",
+    "level": "Masters, PhD",
+    "tags": [
+        "Fully Funded",
+        "CSC Scholarship",
+        "China",
+        "Engineering",
+        "Energy",
+        "Masters",
+        "PhD"
+    ],
+    "description": "The North China Electric Power University (NCEPU) CSC Scholarship is a fully funded program under the Chinese Government Scholarship (CGS-CUP) designed to support outstanding international students. NCEPU is a national key university renowned for its specialized focus on electric power and engineering.",
+    "link": "https://studyatncepu.ncepu.edu.cn/Admissions/Scholarship/index.htm",
+    "views": "N/A",
+    "date": "Dec 16, 2025",
+    "date_posted": "2025-12-16T18:30:00.000Z",
+    "details": {
+        "university": "North China Electric Power University (NCEPU)",
+        "study_location": "Beijing/Baoding, China",
+        "degree_level": "Master’s & PhD",
+        "eligible_nationality": "All Nationalities (Non-Chinese citizens)",
+        "scholarship_coverage": [
+            "Full tuition fee waiver",
+            "Free on-campus accommodation",
+            "Comprehensive medical insurance",
+            "Monthly living stipend: Master’s: 3,000 RMB | PhD: 3,500 RMB"
+        ],
+        "study_duration": [
+            "Master’s: 2.5–3 years",
+            "PhD: 3–4 years (can extend to 6 years depending on research)"
+        ],
+        "application_deadlines": [
+            {
+                "program": "Master’s & PhD (CSC-CUP)",
+                "status": "Open",
+                "start_date": "N/A",
+                "end_date": "30 March 2026"
+            }
+        ],
+        "eligible_programs": [
+            "Electrical Engineering and its Automation (English/Chinese)",
+            "Power Engineering and Engineering Thermophysics",
+            "Renewable Energy and Clean Energy",
+            "Control Science and Engineering",
+            "Computer Science and Technology",
+            "Business Administration",
+            "Management Science and Engineering",
+            "Applied Chemistry",
+            "Environmental Engineering"
+        ],
+        "eligibility_criteria": [
+            "Must be a non-Chinese citizen in good health",
+            "Master’s applicants: Must have a Bachelor's degree and be under 35 years old",
+            "PhD applicants: Must have a Master's degree and be under 40 years old",
+            "Must demonstrate strong academic record and research potential",
+            "Must not be currently receiving any other Chinese government scholarship"
+        ],
+        "language_requirements": {
+            "Chinese-taught programs": "HSK 4 or above (HSK 5 preferred for some majors)",
+            "English-taught programs": "IELTS 6.0+ or TOEFL 86+ (or English Proficiency Certificate for native/instructed speakers)"
+        },
+        "required_documents": [
+            "Highest degree certificate and academic transcripts (notarized)",
+            "Two recommendation letters from professors or associate professors",
+            "Study plan or research proposal (minimum 800 words)",
+            "Foreigner Physical Examination Form",
+            "Non-criminal record certificate (Police clearance)",
+            "Passport copy and passport-size photo",
+            "English or Chinese language proficiency certificate",
+            "Acceptance letter (optional but highly recommended)"
+        ]
+    }
 }
 ]
+
 
 
 
