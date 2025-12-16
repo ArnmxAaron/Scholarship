@@ -880,8 +880,89 @@ const scholarships = [
             "Note: Academic records, transcripts, and proof of English are only requested if you are shortlisted."
         ]
     }
+},
+    {
+    "id": 15,
+    "title": "Texas Tech University Freshman Presidential Scholarship Program 2026",
+    "amount": "Up to $9,000 per year (plus In-State Tuition Waiver worth approx. $7,000-$8,000)",
+    "deadline": "15 April 2026 (Priority Deadline: 1 December 2025)",
+    "location": "United States 🇺🇸",
+    "level": "Undergraduate (Freshman)",
+    "tags": [
+        "Merit-Based",
+        "USA",
+        "Undergraduate",
+        "In-State Tuition Waiver",
+        "Freshman",
+        "Texas Tech"
+    ],
+    "description": "The Presidential Scholarship is awarded to incoming first-time freshmen at Texas Tech University who demonstrate exceptional academic ability. Beyond the cash award, non-resident recipients qualify for a competitive scholarship waiver, allowing them to pay significantly lower in-state tuition rates.",
+    "link": "https://www.depts.ttu.edu/scholarships/FreshmanPresidential.php",
+    "views": "N/A",
+    "date": "Dec 16, 2025",
+    "date_posted": "2025-12-16T21:05:00.000Z",
+    "details": {
+        "university": "Texas Tech University (TTU)",
+        "study_location": "Lubbock, Texas, USA",
+        "degree_level": "Undergraduate (Incoming Freshmen)",
+        "eligible_nationality": "All Nationalities (Domestic & International)",
+        "scholarship_coverage": [
+            "Annual cash award ranging from $1,000 to $9,000 based on academic tier",
+            "In-state tuition rate for non-residents (saving approximately $7,000–$8,000 annually)",
+            "Funds disbursed 50% in Fall and 50% in Spring terms",
+            "Guaranteed for students admitted by April 15th (subject to fund availability after this date)"
+        ],
+        "award_tiers_2026": [
+            {
+                "test_score": "1500+ SAT / 34+ ACT",
+                "high_school_gpa": "4.0 - 3.96",
+                "annual_amount": "$9,000"
+            },
+            {
+                "test_score": "1400-1490 SAT / 31-33 ACT",
+                "high_school_gpa": "4.0 - 3.96",
+                "annual_amount": "$8,000"
+            },
+            {
+                "test_score": "1300-1390 SAT / 28-30 ACT",
+                "high_school_gpa": "4.0 - 3.96",
+                "annual_amount": "$6,500"
+            }
+        ],
+        "application_deadlines": [
+            {
+                "program": "Priority Scholarship Deadline",
+                "status": "Recommended",
+                "end_date": "1 December 2025"
+            },
+            {
+                "program": "Final Guaranteed Admission Deadline",
+                "status": "Open",
+                "end_date": "15 April 2026"
+            }
+        ],
+        "eligibility_criteria": [
+            "Must be an incoming first-time freshman (credits earned via AP, CLEP, or dual-credit do not disqualify).",
+            "Selection is based on a combination of official class rank/percentile and standardized test scores (SAT/ACT).",
+            "Must enroll in full-time study (at least 12 credit hours per semester).",
+            "Non-ranking high school students will be assigned a rank by the Office of Undergraduate Admissions.",
+            "International students are eligible based on transcript evaluation and test scores."
+        ],
+        "renewal_requirements": [
+            "Maintain a cumulative GPA (3.0 to 3.5 depending on the specific award tier).",
+            "Accumulate at least 30 TTU credit hours per academic year (Fall, Spring, and Summer).",
+            "Attend required donor events and write thank-you letters as directed."
+        ],
+        "required_documents": [
+            "Admission application via ApplyTexas or Common App",
+            "Official high school transcripts",
+            "Official SAT or ACT scores (highest section scores from multiple tests will be used for 'Super Scoring')",
+            "Scholarship portal application for additional departmental awards"
+        ]
+    }
 }
 ]
+
 
 
 
