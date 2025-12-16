@@ -726,8 +726,91 @@ const scholarships = [
             "Acceptance letter (optional but highly recommended)"
         ]
     }
+},
+    {
+    "id": 13,
+    "title": "Dalarna University Masters Scholarships 2026",
+    "amount": "Funded (10% to 50% Tuition Fee Reduction, up to 90,000 SEK)",
+    "deadline": "1 March 2026 (Autumn Intake) / 30 September 2025 (Spring Intake)",
+    "location": "Sweden 🇸🇪",
+    "level": "Master's Degree",
+    "tags": [
+        "Partial Funding",
+        "Sweden",
+        "Masters",
+        "Tuition Waiver",
+        "International Students",
+        "Academic Excellence"
+    ],
+    "description": "Dalarna University offers partial tuition fee waivers to outstanding new international, fee-paying Master's students. These scholarships are merit-based and aim to reward academic excellence and commitment, covering a significant portion of the tuition costs for various English-taught programs.",
+    "link": "https://www.du.se/en/study-at-du/international-students-applications-admissions-and-registration/scholarships/",
+    "views": "N/A",
+    "date": "Dec 16, 2025",
+    "date_posted": "2025-12-16T14:20:00.000Z",
+    "details": {
+        "university": "Dalarna University (Högskolan Dalarna)",
+        "study_location": "Falun and Borlänge, Sweden",
+        "degree_level": "Master’s Degree (On-campus and some Online)",
+        "eligible_nationality": "All International Nationalities (Non-EU/EEA fee-paying students)",
+        "scholarship_coverage": [
+            "Reduction in tuition fees ranging from 10% to 50%",
+            "Total possible award value between 20,000 SEK and 90,000 SEK (depending on the program)",
+            "Automatic deduction of the awarded amount from the tuition invoice each semester",
+            "Choose Dalarna First Scholarship: 5,000 SEK immediate reduction for first-choice applicants"
+        ],
+        "scholarship_types": [
+            {
+                "name": "Choose Dalarna First Scholarship",
+                "benefit": "5,000 SEK tuition reduction",
+                "criteria": "Awarded to students who rank a Dalarna University program as their first choice on UniversityAdmissions.se."
+            },
+            {
+                "name": "Academic Excellence Scholarship",
+                "benefit": "10,000 to 15,000 SEK per semester",
+                "criteria": "Awarded based on ongoing academic performance (completing 30 credits per semester with high grades)."
+            }
+        ],
+        "application_deadlines": [
+            {
+                "intake": "Autumn 2026 (September)",
+                "status": "Opening Jan 2026",
+                "start_date": "1 January 2026",
+                "end_date": "1 March 2026"
+            },
+            {
+                "intake": "Spring 2026 (January)",
+                "status": "Closed",
+                "start_date": "1 September 2025",
+                "end_date": "30 September 2025"
+            }
+        ],
+        "eligible_programs": [
+            "Business Intelligence",
+            "Data Science",
+            "Business Studies with an International Focus",
+            "Tourism Destination Development",
+            "Sustainability and Tourism",
+            "Materials Engineering and Product Development",
+            "Energy Efficient Built Environment",
+            "Solar Energy Engineering",
+            "Global Sexual Reproductive Health"
+        ],
+        "eligibility_criteria": [
+            "Must be required to pay tuition fees in Sweden (Non-EU/EEA/Swiss citizens).",
+            "Hold a Bachelor's degree equivalent to a Swedish degree from a recognized university.",
+            "Must apply for an eligible Master's program at Dalarna University via UniversityAdmissions.se.",
+            "English Proficiency: IELTS (6.5, no band below 5.5) or TOEFL (90, minimum 20 on writing)."
+        ],
+        "required_documents": [
+            "Online scholarship application form",
+            "Updated CV (uploaded to University Admissions account)",
+            "One Recommendation Letter from a teacher or employer",
+            "A 60-second video explaining why you deserve the scholarship (hosted on a cloud/video link)"
+        ]
+    }
 }
 ]
+
 
 
 
